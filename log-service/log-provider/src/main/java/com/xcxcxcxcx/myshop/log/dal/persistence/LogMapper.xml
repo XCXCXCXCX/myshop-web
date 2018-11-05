@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xcxcxcxcx.myshop.pay.dal.persistence.PayMapper">
+
+    <insert id="insertLog"
+            parameterType="com.xcxcxcxcx.myshop.log.dal.entity.LogEntity"
+            keyColumn="pay_id"
+            useGeneratedKeys="true">
+        INSERT INTO myshop_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="opType != null">
+                op_type,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="opTime != null">
+                op_time,
+            </if>
+            <if test="fromApp != null">
+                from_app,
+            </if>
+            <if test="logInfo != null">
+                log_info,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="opType != null">
+                #{opType,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=DATE},
+            </if>
+            <if test="fromApp != null">
+                #{fromApp,jdbcType=VARCHAR},
+            </if>
+            <if test="logInfo != null">
+                #{logInfo,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <sql id="Base_Column_List" >
+        op_id, op_type, user_id, op_time, from_app, log_info
+    </sql>
+
+    <select id="queryLog"
+            parameterType="com.xcxcxcxcx.myshop.log.dal.dto.LogQuery"
+            resultType="java.util.HashMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM myshop_log
+        WHERE 1 = 1
+        <if test="opType != null">
+            AND op_type = #{opType}
+        </if>
+        <if test="userId != null">
+            AND user_id = #{userId}
+        </if>
+        <if test="fromTime != null">
+            AND op_time &gt;= #{fromTime}
+        </if>
+        <if test="toTime != null">
+            AND op_time &lt;= #{toTime}
+        </if>
+        <if test="fromApp != null">
+            AND from_app = #{fromApp}
+        </if>
+        <if test="blurLogInfo != null">
+            AND log_info like '%'+#{blurLogInfo}+'%'
+        </if>
+    </select>
+
+    <delete id="deleteLog">
+        DELETE FROM myshop_log
+        WHERE op_time - NOW() &lt;= #{expiredValue}
+    </delete>
+
+</mapper>

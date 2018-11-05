@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xcxcxcxcx.myshop.divide.dal.persistence.TopicMapper">
+    <insert id="insertTopic"
+            useGeneratedKeys="true"
+            keyColumn="topic_id"
+            parameterType="com.xcxcxcxcx.myshop.divide.dal.entity.Topic">
+        INSERT INTO myshop_topic
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="unitAmount != null">
+                unit_amount,
+            </if>
+            <if test="publisherId != null">
+                publisher_id,
+            </if>
+            <if test="currentAmount != null">
+                current_amount,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="beginTime != null">
+                begin_time,
+            </if>
+            <if test="activeTime != null">
+                active_time,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="unitAmount != null">
+                #{unitAmount,jdbcType=INTEGER},
+            </if>
+            <if test="publisherId != null">
+                #{publisherId,jdbcType=BIGINT},
+            </if>
+            <if test="currentAmount != null">
+                #{currentAmount,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="beginTime != null">
+                #{beginTime,jdbcType=DATE},
+            </if>
+            <if test="activeTime != null">
+                #{activeTime,jdbcType=DATE},
+            </if>
+            <if test="endTime != null">
+                #{endTime,jdbcType=DATE},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateTopicStatus"
+            useGeneratedKeys="true"
+            keyColumn="topic_id">
+        UPDATE myshop_topic
+        SET status = #{status}
+        WHERE topic_id = #{topicId}
+        AND status = #{oldStatus}
+    </update>
+
+    <sql id="Base_Column_List" >
+        unit_amount, publisher_id, current_amount, status, begin_time, active_time, end_time
+    </sql>
+
+    <select id="getTopicByUserid"
+            resultType="java.util.ArrayList">
+        SELECT topic.topic_id, <include refid="Base_Column_List"/>
+        FROM myshop_topic topic RIGHT join myshop_bill bill on topic.topic_id = bill.topic_id
+        WHERE bill.user_id = #{userId}
+    </select>
+
+    <select id="getTopicByTopicid"
+            resultType="com.xcxcxcxcx.myshop.divide.dal.entity.Topic">
+        SELECT topic_id, <include refid="Base_Column_List"/>
+        FROM myshop_topic
+        WHERE topic_id = #{topicId}
+    </select>
+
+    <update id="updateTopicCurrentAmount"
+            useGeneratedKeys="true"
+            keyColumn="topic_id">
+        UPDATE myshop_topic
+        SET current_amount = current_amount + #{addAmount}
+        WHERE topic_id = #{topicId}
+    </update>
+
+</mapper>

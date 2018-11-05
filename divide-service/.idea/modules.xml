@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/divide-api/divide-api.iml" filepath="$PROJECT_DIR$/divide-api/divide-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/divide-provider/divide-provider.iml" filepath="$PROJECT_DIR$/divide-provider/divide-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/divide-service.iml" filepath="$PROJECT_DIR$/divide-service.iml" />
+    </modules>
+  </component>
+</project>

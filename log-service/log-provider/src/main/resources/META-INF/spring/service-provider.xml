@@ -1,0 +1,27 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <context:property-placeholder location="classpath:appliaction.properties"/>
+
+    <!-- provider's application name, used for tracing dependency relationship -->
+    <dubbo:application name="${application.name}" owner="${dubbo.application.owner}"/>
+
+    <dubbo:registry protocol="zookeeper" address="${dubbo.zk.servers}"
+            group="${dubbo.zk.group}" file="${dubbo.cache.dir}/log-service.cache"/>
+
+    <!-- use dubbo protocol to export service on port 20880 -->
+    <dubbo:protocol name="dubbo" port="${dubbo.service.provider.port}"
+                    accesslog="${dubbo.protocol.accesslog}"/>
+
+    <!-- service implementation, as same as regular local bean -->
+    <bean id="logCollectService" class="com.xcxcxcxcx.myshop.log.service.impl.LogCollectServiceImpl"/>
+
+    <!-- declare the service interface to be exported -->
+    <dubbo:service interface="com.xcxcxcxcx.myshop.ILogCollectService"
+                   ref="logCollectService" timeout="3000"/>
+
+</beans>
