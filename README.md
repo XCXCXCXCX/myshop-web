@@ -12,6 +12,24 @@
 
 
 
+
+### 模块介绍
+
+myshop-parent：作为service层中provider模块的父依赖项目，用于jar包的版本控制
+
+service-support：作为service层中api模块的父依赖项目，用于定义统一规范的api
+
+user-service：user-service层项目，有api和provier模块
+
+divide-service：divide-service层项目，有api和provier模块
+
+pay-service：pay-service层项目，有api和provier模块
+
+log-service：log-service层项目，有api和provier模块
+
+
+
+
 ### 系统架构
 
 ![系统架构](系统架构.png)
@@ -38,9 +56,9 @@ kafka做日志收集
 
 先抢到红包的人有机会拿到最大的divide金额
 
-从当前红包池随机获取当前红包池的10%-90%的金额
+从当前红包池随机获取当前红包池的10%-90%的金额 
 
-
+​            
 
 实现原理：
 
