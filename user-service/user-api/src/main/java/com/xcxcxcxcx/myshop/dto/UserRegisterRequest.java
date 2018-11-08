@@ -17,8 +17,6 @@ public class UserRegisterRequest extends AbstractRequest{
 
     private String wechatNumber;
 
-    private Long logid;
-
     public String getUsername() {
         return username;
     }
@@ -51,14 +49,6 @@ public class UserRegisterRequest extends AbstractRequest{
         this.wechatNumber = wechatNumber;
     }
 
-    public Long getLogid() {
-        return logid;
-    }
-
-    public void setLogid(Long logid) {
-        this.logid = logid;
-    }
-
     @Override
     public String toString() {
         return "UserRegisterRequest{" +
@@ -66,7 +56,6 @@ public class UserRegisterRequest extends AbstractRequest{
                 ", password='" + password + '\'' +
                 ", alipayNumber='" + alipayNumber + '\'' +
                 ", wechatNumber='" + wechatNumber + '\'' +
-                ", logid=" + logid +
                 '}';
     }
 }

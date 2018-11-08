@@ -30,7 +30,7 @@
         <property name="dataSource" ref="divideDataSource" />
         <property name="typeAliasesPackage"
                   value="com.xcxcxcxcx.myshop.divide.dal.entity" />
-        <property name="mapperLocations" value="classpath*:com/xcxcxcxcx/myshop/divide/dal/persistence/*Mapper.xml" />
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />
     </bean>
 
     <bean name="divideMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">

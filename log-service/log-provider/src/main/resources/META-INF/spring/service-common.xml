@@ -31,7 +31,7 @@
         <property name="dataSource" ref="logDataSource" />
         <property name="typeAliasesPackage"
                   value="com.xcxcxcxcx.myshop.log.dal.entity" />
-        <property name="mapperLocations" value="classpath*:com/xcxcxcxcx/myshop/log/dal/persistence/*Mapper.xml" />
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />
     </bean>
 
     <bean name="logMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">

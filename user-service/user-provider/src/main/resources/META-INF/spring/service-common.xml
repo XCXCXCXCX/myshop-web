@@ -30,7 +30,8 @@
         <property name="dataSource" ref="userDataSource" />
         <property name="typeAliasesPackage"
                   value="com.xcxcxcxcx.myshop.user.dal.entity" />
-        <property name="mapperLocations" value="classpath*:com/xcxcxcxcx/myshop/user/dal/persistence/*Mapper.xml" />
+
+        <property name="mapperLocations" value="classpath*:mapper/*Mapper.xml" />
     </bean>
 
     <bean name="userMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -39,8 +40,8 @@
         <property name="sqlSessionFactoryBeanName" value="userSqlSessionFactory" />
     </bean>
 
-    <context:component-scan base-package="com.xcxcxcxcx.myshop.user.dal" />
-    <context:component-scan base-package="com.xcxcxcxcx.myshop.user.service" />
+    <context:component-scan base-package="com.xcxcxcxcx.myshop.user.dal.persistence" />
+    <context:component-scan base-package="com.xcxcxcxcx.myshop.user.service.impl" />
     <context:component-scan base-package="com.xcxcxcxcx.myshop.user.notify" />
 
 </beans>

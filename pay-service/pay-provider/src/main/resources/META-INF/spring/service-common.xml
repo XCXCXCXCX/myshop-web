@@ -30,7 +30,7 @@
         <property name="dataSource" ref="payDataSource" />
         <property name="typeAliasesPackage"
                   value="com.xcxcxcxcx.myshop.pay.dal.entity" />
-        <property name="mapperLocations" value="classpath*:com/xcxcxcxcx/myshop/pay/dal/persistence/*Mapper.xml" />
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />
     </bean>
 
     <bean name="payMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">

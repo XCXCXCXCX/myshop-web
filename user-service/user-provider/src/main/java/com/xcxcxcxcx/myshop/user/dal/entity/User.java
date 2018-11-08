@@ -19,8 +19,6 @@ public class User {
 
     private String wechatNumber;
 
-    private Long lastLogid;
-
     private int status;
 
     private Date createTime;
@@ -65,14 +63,6 @@ public class User {
 
     public void setWechatNumber(String wechatNumber) {
         this.wechatNumber = wechatNumber;
-    }
-
-    public Long getLastLogid() {
-        return lastLogid;
-    }
-
-    public void setLastLogid(Long lastLogid) {
-        this.lastLogid = lastLogid;
     }
 
     public int getStatus() {

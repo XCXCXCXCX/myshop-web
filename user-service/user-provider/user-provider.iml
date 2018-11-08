@@ -65,5 +65,6 @@
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.9" level="project" />
     <orderEntry type="module" module-name="user-api" />
     <orderEntry type="library" name="Maven: com.xcxcxcxcx:service-support:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-all:4.0.23.Final" level="project" />
   </component>
 </module>

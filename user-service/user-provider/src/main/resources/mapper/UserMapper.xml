@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xcxcxcxcx.myshop.user.dal.persistence.UserMapper">
+
+    <sql id="Base_Column_List" >
+        id, username, password, alipayNumber, wechatNumber, status, createTime, versionNumber
+    </sql>
+
+    <select id="getUserByUsername"
+            resultType="com.xcxcxcxcx.myshop.user.dal.entity.User">
+        SELECT <include refid="Base_Column_List"/> FROM myshop_user
+        WHERE username = #{username}
+    </select>
+
+    <insert id="insertSelective"
+            parameterType="com.xcxcxcxcx.myshop.user.dal.entity.User"
+            keyColumn="id"
+            useGeneratedKeys="true">
+        INSERT INTO myshop_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="alipayNumber != null">
+                alipayNumber,
+            </if>
+            <if test="wechatNumber != null">
+                wechatNumber,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+                createTime,
+            <if test="versionNumber != null">
+                versionNumber,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="alipayNumber != null">
+                #{alipayNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="wechatNumber != null">
+                #{wechatNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+                NOW(),
+            <if test="versionNumber != null">
+                #{versionNumber,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>

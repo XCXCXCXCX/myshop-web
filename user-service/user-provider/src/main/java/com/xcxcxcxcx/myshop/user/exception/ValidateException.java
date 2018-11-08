@@ -39,7 +39,7 @@ public class ValidateException extends RuntimeException {
     public ValidateException(String errorCode) {
         super(errorCode);
         this.errorCode= ResponseCodeEnum.REQUEST_PARAM_INCORRECT.getCode();
-        this.errorMessage=ResponseCodeEnum.REQUEST_PARAM_INCORRECT.getMsg();
+        this.errorMessage=errorCode;
     }
 
     /**

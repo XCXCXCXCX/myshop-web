@@ -63,7 +63,7 @@ public class WechatPayment extends BasePayment {
                 logSenderService.synDeliver(logger,logEntity,response);
             }finally {
                 if(row < 1){
-                    response.setCode("EXCEPTION");
+                    response.setCode("EXCEPTION_CODE");
                     response.setMsg("回调支付成功但持久化异常，检查是否存在该订单，以及订单状态是否有误");
                     return response;
                 }
