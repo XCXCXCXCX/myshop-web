@@ -11,11 +11,9 @@ public class Topic {
 
     private Long topicId;
 
-    private int unitAmount;
+    private double unitAmount;
 
     private Long publisherId;
-
-    private int currentAmount;
 
     private int status;
 
@@ -33,11 +31,11 @@ public class Topic {
         this.topicId = topicId;
     }
 
-    public int getUnitAmount() {
+    public double getUnitAmount() {
         return unitAmount;
     }
 
-    public void setUnitAmount(int unitAmount) {
+    public void setUnitAmount(double unitAmount) {
         this.unitAmount = unitAmount;
     }
 
@@ -47,14 +45,6 @@ public class Topic {
 
     public void setPublisherId(Long publisherId) {
         this.publisherId = publisherId;
-    }
-
-    public int getCurrentAmount() {
-        return currentAmount;
-    }
-
-    public void setCurrentAmount(int currentAmount) {
-        this.currentAmount = currentAmount;
     }
 
     public int getStatus() {

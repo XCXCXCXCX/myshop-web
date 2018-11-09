@@ -20,4 +20,6 @@ public interface BillMapper {
     int updateBillStatus(Long billId, int oldStatus, int status);
 
     Bill getBillByBillid(Long billId);
+
+    int updateBillCurrentAmount(Long billId, double reduceAmount);
 }

@@ -14,9 +14,6 @@
             <if test="publisherId != null">
                 publisher_id,
             </if>
-            <if test="currentAmount != null">
-                current_amount,
-            </if>
             <if test="status != null">
                 status,
             </if>
@@ -32,13 +29,10 @@
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="unitAmount != null">
-                #{unitAmount,jdbcType=INTEGER},
+                #{unitAmount,jdbcType=DECIMAL},
             </if>
             <if test="publisherId != null">
                 #{publisherId,jdbcType=BIGINT},
-            </if>
-            <if test="currentAmount != null">
-                #{currentAmount,jdbcType=INTEGER},
             </if>
             <if test="status != null">
                 #{status,jdbcType=INTEGER},
@@ -82,12 +76,5 @@
         WHERE topic_id = #{topicId}
     </select>
 
-    <update id="updateTopicCurrentAmount"
-            useGeneratedKeys="true"
-            keyColumn="topic_id">
-        UPDATE myshop_topic
-        SET current_amount = current_amount + #{addAmount}
-        WHERE topic_id = #{topicId}
-    </update>
 
 </mapper>

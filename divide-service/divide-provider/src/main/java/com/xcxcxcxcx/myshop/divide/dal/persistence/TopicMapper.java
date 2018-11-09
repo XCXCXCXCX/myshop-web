@@ -19,6 +19,4 @@ public interface TopicMapper {
 
     Topic getTopicByTopicid(Long topicId);
 
-    int updateTopicCurrentAmount(Long topicId, int addAmount);
-
 }

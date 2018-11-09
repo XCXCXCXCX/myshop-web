@@ -15,7 +15,12 @@
             <if test="userId != null">
                 user_id,
             </if>
+            <if test="currentAmount != null">
+                current_amount,
+            </if>
+            <if test="status != null">
                 status,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="topicId != null">
@@ -24,6 +29,9 @@
             <if test="userId != null">
                 #{userId,jdbcType=BIGINT},
             </if>
+            <if test="currentAmount != null">
+                #{currentAmount,jdbcType=DECIMAL},
+            </if>
             <if test="status != null">
                 #{status,jdbcType=INTEGER},
             </if>
@@ -31,7 +39,7 @@
     </insert>
 
     <sql id="Base_Column_List" >
-        bill_id, topic_id, user_id, status
+        bill_id, topic_id, user_id, current_amount, status
     </sql>
 
     <select id="getBillByTopicidAndUserid"
@@ -64,4 +72,12 @@
         FROM myshop_bill
         WHERE bill_id = #{billId}
     </select>
+
+    <update id="updateBillCurrentAmount"
+            useGeneratedKeys="true"
+            keyColumn="bill_id">
+        UPDATE myshop_bill
+        SET current_amount = current_amount - #{reduceAmount}
+        where bill_id = #{billId}
+    </update>
 </mapper>

@@ -8,4 +8,8 @@ import com.xcxcxcxcx.service.support.core.response.AbstractResponse;
  * @comments
  */
 public class TopicSettleAccountsResponse extends AbstractResponse{
+    @Override
+    public String toString() {
+        return "TopicSettleAccountsResponse{}";
+    }
 }

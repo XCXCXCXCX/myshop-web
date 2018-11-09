@@ -8,5 +8,8 @@ import com.xcxcxcxcx.service.support.core.response.AbstractResponse;
  * @comments
  */
 public class TopicJoinResponse extends AbstractResponse {
-
+    @Override
+    public String toString() {
+        return "TopicJoinResponse{}";
+    }
 }

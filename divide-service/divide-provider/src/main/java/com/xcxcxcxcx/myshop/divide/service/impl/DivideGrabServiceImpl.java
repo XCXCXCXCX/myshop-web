@@ -8,6 +8,7 @@ import com.xcxcxcxcx.myshop.divide.dal.entity.Bill;
 import com.xcxcxcxcx.myshop.divide.dal.entity.Topic;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.BillMapper;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.TopicMapper;
+import com.xcxcxcxcx.myshop.divide.dal.persistence.TopicStatusEnum;
 import com.xcxcxcxcx.myshop.divide.exception.ServiceException;
 import com.xcxcxcxcx.myshop.divide.exception.ValidateException;
 import com.xcxcxcxcx.myshop.divide.service.ILogSenderService;
@@ -46,7 +47,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
 
     private final ScheduledExecutorService delayExecutor = Executors.newScheduledThreadPool(10);
 
-    private final ExecutorService asynPersistentExecutor  =  Executors.newFixedThreadPool(10);
+    private final ExecutorService asynPersistentExecutor = Executors.newFixedThreadPool(10);
 
     private final Random random = new Random();
 
@@ -144,8 +145,8 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
                     return;
                 }
 
-                //3.更新mysql中topic的status = 1 进入抢购状态
-                int row = topicMapper.updateTopicStatus(topicId, 0, 1);
+                //3.更新mysql中topic的status = 2 进入抢购状态
+                int row = topicMapper.updateTopicStatus(topicId, TopicStatusEnum.PREPARE.getCode(), TopicStatusEnum.DOING.getCode());
                 if (row < 1) {
                     logger.error("topicId = " + topicId + " preFetch成功但mysql更新状态失败");
                     //日志记录
@@ -209,15 +210,21 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
             Long topicId = topicGrabRequest.getTopicId();
             Long userId = topicGrabRequest.getUserId();
 
-            Bill bill = billMapper.getBillByTopicidAndUserid(topicId,userId);
+            Bill bill = billMapper.getBillByTopicidAndUserid(topicId, userId);
 
-            if(bill == null){
+            if (bill == null) {
                 throw new ValidateException("topicGrab异常，topic中不存在该用户记录!");
+            }
+
+            Topic topic = topicMapper.getTopicByTopicid(topicId);
+            if(topic.getStatus() != TopicStatusEnum.DOING.getCode()){
+
+                throw new ValidateException("该topic目前不在可抢状态!");
             }
 
             //1.用户是否在红包群中,每个用户只能抢购一次
             Long row = redisTemplate.opsForSet().remove(topicId, topicGrabRequest.getUserId());
-            if(row == 0){
+            if (row == 0) {
                 throw new ValidateException("红包已抢光!");
             }
 
@@ -229,23 +236,23 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
 
             //3.异步持久化到数据库
             //1).更新topic的current_amount
-            //2).更新topic下的bill的status（status = 2表示已抢购）
-            asynPersistentExecutor.submit(()->{
+            //2).更新topic下的bill的status
+            asynPersistentExecutor.submit(() -> {
 
-                try{
-                    persistentTransactionService.updateTopicAndBill(topicId,
+                try {
+                    persistentTransactionService.updateBillAmountAndStatus(
+                            bill.getBillId(),
                             Integer.parseInt(userAmount.toString()),
-                            userId,
-                            1,
-                            2);
-                }catch (Exception e){
+                            0,
+                            1);
+                } catch (Exception e) {
                     TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
                     //日志记录
-                    logger.error("{"+ topicGrabRequest.toString() +"}"+"-> grab fail cause of : 抢购成功但数据库持久化失败{" + e + "}");
+                    logger.error("{" + topicGrabRequest.toString() + "}" + "-> grab fail cause of : 抢购成功但数据库持久化失败{" + e + "}");
                     LogEntityBuilder.LogEntity logEntity =
                             LogEntityBuilder.createLog(LogEntityBuilder.OpTypeEnum.ERROR
                                     , userId
-                                    , "{"+ topicGrabRequest.toString() +"}"+"-> grab fail cause of : 抢购成功但数据库持久化失败{" + e + "}").build();
+                                    , "{" + topicGrabRequest.toString() + "}" + "-> grab fail cause of : 抢购成功但数据库持久化失败{" + e + "}").build();
                     logSenderService.synDeliver(logger, logEntity);
                 }
 
@@ -289,67 +296,94 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
     }
 
     private void doSettleAccounts(TopicSettleAccountsRequest topicSettleAccountsRequest) {
-
-        Long topicId = topicSettleAccountsRequest.getTopicId();
         //对账
-        boolean diff = false;
-        //1.从redis中读取数据
+        Long topicId = topicSettleAccountsRequest.getTopicId();
+
+
+        //从mysql中读取数据
+        List<Bill> billList = billMapper.getBillByTopicid(topicId);
+        List<Bill> mysqlNeedToPayBillList = billList.stream()
+                .filter(x -> x.getStatus() == 0)
+                .collect(Collectors.toList());
+
+        //从redis中读取数据
         List<String> amountList = redisTemplate.opsForList().range(topicId, 0, -1);
         Set<String> userSet = redisTemplate.opsForSet().members(topicId + "_set");
-        //2.比较redis中该topic list和set是否为空，是否属于正常数据（log-info-1）
-        if ((amountList == null || amountList.isEmpty())
-                && (userSet == null || userSet.isEmpty())) {
-            logger.error("redis中topic list和set均为空，guess because of init failure!");
-            LogEntityBuilder.LogEntity logEntity = LogEntityBuilder.createLog(LogEntityBuilder.OpTypeEnum.ERROR, 0L,
-                    "redis中topic list和set均为空，guess because of init failure!").build();
+        int mysqlNeedToPayNum = mysqlNeedToPayBillList.size();
 
-            //异步日志记录
-            logSenderService.synDeliver(logger, logEntity);
 
-            diff = true;
+        //处理redis未操作数据(以userSet为准,此时可能存在未消费的amount)
+        handleRedisData(userSet, amountList, billList);
+
+        double currentAmount = billList.stream()
+                .map(x -> x.getCurrentAmount())
+                .reduce(0.00, (x, y) -> x + y);
+
+        double remainUnitAmount = currentAmount / mysqlNeedToPayNum;
+
+
+        //根据mysql现有数据进行最终修正(包含redis中可能未消费的amount一并处理)
+        for(Bill bill : mysqlNeedToPayBillList){
+
+            Long billId = bill.getBillId();
+
+            billMapper.updateBillCurrentAmount(billId, remainUnitAmount);
+
+            billMapper.updateBillStatus(billId, 0, 1);
+
         }
-        //3.从mysql中读取数据
-        Topic topic = topicMapper.getTopicByTopicid(topicId);
-        //4.(1)比较mysql中的current_amount是否是list的集合（log-info-2）
-        long currentAmount = amountList.stream()
-                .map(x -> Long.parseLong(x))
-                .reduce(0L, (x, y) -> x + y);
-        if (topic.getCurrentAmount() != currentAmount) {
-            LogEntityBuilder.LogEntity logEntity = LogEntityBuilder.createLog(LogEntityBuilder.OpTypeEnum.ERROR, 0L,
-                    "redisCurrentAmount = " + currentAmount
-                            + ",mysqlCurrentAmount = " + topic.getCurrentAmount()).build();
-            //异步日志记录
-            logSenderService.synDeliver(logger, logEntity);
 
-            diff = true;
-        }
-        //  (2)比较该topic下的bill状态是否与redis中set的符合（log-info-3）
-        List<Bill> billList = billMapper.getBillByTopicid(topicId);
-        for (Bill bill : billList) {
-            if (bill.getStatus() == 1
-                    && !userSet.contains(bill.getBillId().toString())) {
-                LogEntityBuilder.LogEntity logEntity = LogEntityBuilder.createLog(LogEntityBuilder.OpTypeEnum.ERROR,
-                        0L,
-                        "redisSet = {" + userSet.toString() + "}," +
-                                "mysqlSet = {" + billList.toString() + "}").build();
-                //异步日志记录
-                logSenderService.synDeliver(logger, logEntity);
+        //最终对账
+        List<Bill> newBillList = billMapper.getBillByTopicid(topicId);
+        int current = newBillList.size();
+        int currentSuccess = newBillList
+                .stream()
+                .filter(x -> x.getStatus() == 1)
+                .collect(Collectors.toList())
+                .size();
 
-                diff = true;
-                break;
-            }
-        }
-        //5.如果发现对账错误，超过10分钟后重试（log-info-all）
-        if (diff) {
-            delayExecutor.schedule(
-                    ()->topicSettleAccounts(topicSettleAccountsRequest),
-                    10, TimeUnit.MINUTES);
-        }else{
-            //6.如果对账成功，使redis中的数据失效
+        if (current == currentSuccess) {
+
+            //对账成功，令缓存失效
             redisTemplate.delete(topicId);
             redisTemplate.delete(topicId + "_set");
+
+        } else {
+
+            logger.error("对账有误，result : current = " + current + " but currentSuccess = " + currentSuccess);
+            LogEntityBuilder.LogEntity logEntity = LogEntityBuilder.createLog(LogEntityBuilder.OpTypeEnum.ERROR,
+                    0L, "对账有误，result : current = " + current + " but currentSuccess = " + currentSuccess).build();
+            logSenderService.synDeliver(logger, logEntity);
+
         }
 
+        //topic结束
+        topicMapper.updateTopicStatus(topicId, TopicStatusEnum.DOING.getCode(), TopicStatusEnum.END.getCode());
+
+    }
+
+    private void handleRedisData(Set<String> userSet, List<String> amountList, List<Bill> billList) {
+        int i = 0;
+        for (String user : userSet) {
+            Long userId = Long.valueOf(user);
+            userSet.remove(user);
+            double amount = Double.valueOf(amountList.get(i));
+            amountList.remove(i);
+
+            billMapper.updateBillCurrentAmount(userId, amount);
+
+            List<Long> bills = billList.stream()
+                    .filter(x -> x.getUserId() == userId)
+                    .map(x -> x.getUserId())
+                    .collect(Collectors.toList());
+            if(bills == null || bills.size() != 1){
+                logger.debug("处理redis数据时，在mysql获取该用户对应bill出错 : " + bills.toString() );
+                throw new ValidateException("对账出错,reason => 处理redis数据时，在mysql获取该用户对应bill出错 : " + bills.toString());
+            }
+            billMapper.updateBillStatus(bills.get(0), 0, 1);
+
+            i++;
+        }
     }
 
     private void validateRequest(AbstractRequest request) {

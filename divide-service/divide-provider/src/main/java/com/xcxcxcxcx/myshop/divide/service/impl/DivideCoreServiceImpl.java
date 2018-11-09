@@ -8,6 +8,7 @@ import com.xcxcxcxcx.myshop.divide.dal.entity.Bill;
 import com.xcxcxcxcx.myshop.divide.dal.entity.Topic;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.BillMapper;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.TopicMapper;
+import com.xcxcxcxcx.myshop.divide.dal.persistence.TopicStatusEnum;
 import com.xcxcxcxcx.myshop.divide.exception.ServiceException;
 import com.xcxcxcxcx.myshop.divide.exception.ValidateException;
 import com.xcxcxcxcx.myshop.divide.util.ExceptionUtils;
@@ -46,7 +47,7 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
             topic.setTopicId(topicCreateRequest.getTopicId());
             topic.setPublisherId(topicCreateRequest.getPublisherId());
             topic.setUnitAmount(topicCreateRequest.getUnitAmount());
-            topic.setStatus(1);//1 是新建状态
+            topic.setStatus(TopicStatusEnum.NEW.getCode());
             long nowTimeStamp = System.currentTimeMillis();
             topic.setBeginTime(new Date(nowTimeStamp));
             topic.setActiveTime(new Date(nowTimeStamp + topicCreateRequest.getDelayBeginTime()));
@@ -72,50 +73,50 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
         return response;
     }
 
-    public TopicStatusUpdateResponse updateTopicStatus(TopicStatusUpdateRequest topicStatusUpdateRequest) {
-        TopicStatusUpdateResponse response = new TopicStatusUpdateResponse();
-
-        try{
-            validateRequest(topicStatusUpdateRequest);
-
-            Long topicId = topicStatusUpdateRequest.getTopicId();
-            int newStatus = topicStatusUpdateRequest.getStatus();
-
-            Topic topic = topicMapper.getTopicByTopicid(topicId);
-            if(topic == null){
-                response.setCode(ResponseCodeEnum.TOPIC_NOT_EXIST.getCode());
-                response.setMsg(ResponseCodeEnum.TOPIC_NOT_EXIST.getMsg());
-                return response;
-            }
-
-            int currentStatus = topic.getStatus();
-
-            if(currentStatus >= newStatus){
-                response.setCode(ResponseCodeEnum.TOPIC_ERROR_STATUS.getCode());
-                response.setMsg(ResponseCodeEnum.TOPIC_ERROR_STATUS.getMsg());
-                return response;
-            }
-
-            int row = topicMapper.updateTopicStatus(topicId,currentStatus,newStatus);
-            if(row < 1){
-                response.setCode(ResponseCodeEnum.SYSTEM_BUSY.getCode());
-                response.setMsg(ResponseCodeEnum.SYSTEM_BUSY.getMsg());
-                return response;
-            }
-            response.setCode(ResponseCodeEnum.SUCCESS.getCode());
-            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
-
-        }catch (Exception e){
-            logger.error("updateTopicStatus occur exception : " + e);
-            ServiceException serviceException = (ServiceException) ExceptionUtils.handlerException4biz(e);
-            response.setCode(serviceException.getErrorCode());
-            response.setMsg(serviceException.getErrorMessage());
-        }finally {
-            logger.info("updateTopicStatus response : " + response.toString());
-        }
-
-        return response;
-    }
+//    public TopicStatusUpdateResponse updateTopicStatus(TopicStatusUpdateRequest topicStatusUpdateRequest) {
+//        TopicStatusUpdateResponse response = new TopicStatusUpdateResponse();
+//
+//        try{
+//            validateRequest(topicStatusUpdateRequest);
+//
+//            Long topicId = topicStatusUpdateRequest.getTopicId();
+//            int newStatus = topicStatusUpdateRequest.getStatus();
+//
+//            Topic topic = topicMapper.getTopicByTopicid(topicId);
+//            if(topic == null){
+//                response.setCode(ResponseCodeEnum.TOPIC_NOT_EXIST.getCode());
+//                response.setMsg(ResponseCodeEnum.TOPIC_NOT_EXIST.getMsg());
+//                return response;
+//            }
+//
+//            int currentStatus = topic.getStatus();
+//
+//            if(currentStatus >= newStatus){
+//                response.setCode(ResponseCodeEnum.TOPIC_ERROR_STATUS.getCode());
+//                response.setMsg(ResponseCodeEnum.TOPIC_ERROR_STATUS.getMsg());
+//                return response;
+//            }
+//
+//            int row = topicMapper.updateTopicStatus(topicId,currentStatus,newStatus);
+//            if(row < 1){
+//                response.setCode(ResponseCodeEnum.SYSTEM_BUSY.getCode());
+//                response.setMsg(ResponseCodeEnum.SYSTEM_BUSY.getMsg());
+//                return response;
+//            }
+//            response.setCode(ResponseCodeEnum.SUCCESS.getCode());
+//            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
+//
+//        }catch (Exception e){
+//            logger.error("updateTopicStatus occur exception : " + e);
+//            ServiceException serviceException = (ServiceException) ExceptionUtils.handlerException4biz(e);
+//            response.setCode(serviceException.getErrorCode());
+//            response.setMsg(serviceException.getErrorMessage());
+//        }finally {
+//            logger.info("updateTopicStatus response : " + response.toString());
+//        }
+//
+//        return response;
+//    }
 
     public TopicJoinResponse joinTopic(TopicJoinRequest topicJoinRequest) {
         TopicJoinResponse response = new TopicJoinResponse();
@@ -124,6 +125,18 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
             validateRequest(topicJoinRequest);
 
             Long topicId = topicJoinRequest.getTopicId();
+            Topic topic = topicMapper.getTopicByTopicid(topicId);
+            double unitAmount = topic.getUnitAmount();
+
+            if(topic.getStatus() != TopicStatusEnum.NEW.getCode()){
+                throw new ValidateException("该topic目前不在可加入状态");
+            }
+
+            //topic active前1分钟禁止加入，进入prepare状态
+            if(topic.getActiveTime().getTime() - 60 * 1000 < System.currentTimeMillis()){
+                topicMapper.updateTopicStatus(topicId, TopicStatusEnum.NEW.getCode(), TopicStatusEnum.PREPARE.getCode());
+            }
+
             Long userId = topicJoinRequest.getUserId();
             Bill bill = billMapper.getBillByTopicidAndUserid(topicId,userId);
             if(bill != null){
@@ -134,7 +147,8 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
             bill = new Bill();
             bill.setTopicId(topicId);
             bill.setUserId(userId);
-            bill.setStatus(0);//status=0 表示未对账  1表示对账成功  2表示对账有误
+            bill.setCurrentAmount(unitAmount);
+            bill.setStatus(0);
 
             int row = billMapper.insertBill(bill);
             if(row < 1){
@@ -247,49 +261,49 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
         return response;
     }
 
-    public BillStatusUpdateResponse billStatusUpdate(BillStatusUpdateRequest billStatusUpdateRequest) {
-
-        BillStatusUpdateResponse response = new BillStatusUpdateResponse();
-
-        try {
-
-            validateRequest(billStatusUpdateRequest);
-
-            Bill bill = billMapper.getBillByBillid(billStatusUpdateRequest.getBillId());
-            if(bill == null){
-                response.setCode(ResponseCodeEnum.BILL_NOT_EXIST.getCode());
-                response.setMsg(ResponseCodeEnum.BILL_NOT_EXIST.getMsg());
-                return response;
-            }
-
-            int currentStatus = bill.getStatus();
-            int newStatus = billStatusUpdateRequest.getStatus();
-            if(currentStatus >= newStatus){
-                response.setCode(ResponseCodeEnum.BILL_ERROR_STATUS.getCode());
-                response.setMsg(ResponseCodeEnum.BILL_ERROR_STATUS.getMsg());
-                return response;
-            }
-
-            int row = billMapper.updateBillStatus(billStatusUpdateRequest.getBillId(), currentStatus,billStatusUpdateRequest.getStatus());
-            if(row < 1){
-                response.setCode(ResponseCodeEnum.SYSTEM_BUSY.getCode());
-                response.setMsg(ResponseCodeEnum.SYSTEM_BUSY.getMsg());
-                return response;
-            }
-            response.setCode(ResponseCodeEnum.SUCCESS.getCode());
-            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
-
-        }catch (Exception e){
-            logger.error("billStatusUpdate occur exception : " + e);
-            ServiceException serviceException = (ServiceException) ExceptionUtils.handlerException4biz(e);
-            response.setCode(serviceException.getErrorCode());
-            response.setMsg(serviceException.getErrorMessage());
-        }finally {
-            logger.info("billStatusUpdate response : " + response.toString());
-        }
-
-        return response;
-    }
+//    public BillStatusUpdateResponse billStatusUpdate(BillStatusUpdateRequest billStatusUpdateRequest) {
+//
+//        BillStatusUpdateResponse response = new BillStatusUpdateResponse();
+//
+//        try {
+//
+//            validateRequest(billStatusUpdateRequest);
+//
+//            Bill bill = billMapper.getBillByBillid(billStatusUpdateRequest.getBillId());
+//            if(bill == null){
+//                response.setCode(ResponseCodeEnum.BILL_NOT_EXIST.getCode());
+//                response.setMsg(ResponseCodeEnum.BILL_NOT_EXIST.getMsg());
+//                return response;
+//            }
+//
+//            int currentStatus = bill.getStatus();
+//            int newStatus = billStatusUpdateRequest.getStatus();
+//            if(currentStatus >= newStatus){
+//                response.setCode(ResponseCodeEnum.BILL_ERROR_STATUS.getCode());
+//                response.setMsg(ResponseCodeEnum.BILL_ERROR_STATUS.getMsg());
+//                return response;
+//            }
+//
+//            int row = billMapper.updateBillStatus(billStatusUpdateRequest.getBillId(), currentStatus,billStatusUpdateRequest.getStatus());
+//            if(row < 1){
+//                response.setCode(ResponseCodeEnum.SYSTEM_BUSY.getCode());
+//                response.setMsg(ResponseCodeEnum.SYSTEM_BUSY.getMsg());
+//                return response;
+//            }
+//            response.setCode(ResponseCodeEnum.SUCCESS.getCode());
+//            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
+//
+//        }catch (Exception e){
+//            logger.error("billStatusUpdate occur exception : " + e);
+//            ServiceException serviceException = (ServiceException) ExceptionUtils.handlerException4biz(e);
+//            response.setCode(serviceException.getErrorCode());
+//            response.setMsg(serviceException.getErrorMessage());
+//        }finally {
+//            logger.info("billStatusUpdate response : " + response.toString());
+//        }
+//
+//        return response;
+//    }
 
     private void validateRequest(AbstractRequest request) {
 

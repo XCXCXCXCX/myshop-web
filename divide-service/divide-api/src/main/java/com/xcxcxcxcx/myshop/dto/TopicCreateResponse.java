@@ -9,4 +9,8 @@ import com.xcxcxcxcx.service.support.core.response.AbstractResponse;
  */
 public class TopicCreateResponse extends AbstractResponse{
 
+    @Override
+    public String toString() {
+        return "TopicCreateResponse{}";
+    }
 }

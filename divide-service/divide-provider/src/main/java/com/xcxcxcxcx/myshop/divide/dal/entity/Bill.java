@@ -13,6 +13,8 @@ public class Bill {
 
     private Long userId;
 
+    private Double currentAmount;
+
     private int status;
 
     public Long getBillId() {
@@ -39,6 +41,14 @@ public class Bill {
         this.userId = userId;
     }
 
+    public Double getCurrentAmount() {
+        return currentAmount;
+    }
+
+    public void setCurrentAmount(Double currentAmount) {
+        this.currentAmount = currentAmount;
+    }
+
     public int getStatus() {
         return status;
     }
@@ -53,6 +63,7 @@ public class Bill {
                 "billId=" + billId +
                 ", topicId=" + topicId +
                 ", userId=" + userId +
+                ", currentAmount=" + currentAmount +
                 ", status=" + status +
                 '}';
     }

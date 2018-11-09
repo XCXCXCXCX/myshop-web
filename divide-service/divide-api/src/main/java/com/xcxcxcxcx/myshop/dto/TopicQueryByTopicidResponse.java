@@ -11,7 +11,7 @@ public class TopicQueryByTopicidResponse extends AbstractResponse{
 
     private Long topicId;
 
-    private int unitAmount;
+    private double unitAmount;
 
     private Long publisherId;
 
@@ -25,11 +25,11 @@ public class TopicQueryByTopicidResponse extends AbstractResponse{
         this.topicId = topicId;
     }
 
-    public int getUnitAmount() {
+    public double getUnitAmount() {
         return unitAmount;
     }
 
-    public void setUnitAmount(int unitAmount) {
+    public void setUnitAmount(double unitAmount) {
         this.unitAmount = unitAmount;
     }
 

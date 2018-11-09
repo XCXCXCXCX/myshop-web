@@ -24,19 +24,20 @@ public class PersistentTransactionServiceImpl implements IPersistentTransactionS
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void updateTopicAndBill(Long topicId, int addAmount, Long billId, int oldStatus, int status) {
+    public void updateBillAmountAndStatus(Long billId, int reduceAmount, int oldStatus, int status) {
 
-        int row1 = billMapper.updateBillStatus(billId,oldStatus,status);
+        int row1 = billMapper.updateBillCurrentAmount(billId, reduceAmount);
 
         if(row1 < 1){
+            throw new ValidateException("billId = " + billId + ":更新currentAmount失败");
+        }
+
+        int row2 = billMapper.updateBillStatus(billId,oldStatus,status);
+
+        if(row2 < 1){
             throw new ValidateException("billId = " + billId + ":状态有误");
         }
 
-        int row2 = topicMapper.updateTopicCurrentAmount(topicId,addAmount);
-
-        if(row2 < 1){
-            throw new ValidateException("topicId = " + topicId + ":currentAmount更新失败");
-        }
 
     }
 }
