@@ -26,18 +26,17 @@ public class PersistentTransactionServiceImpl implements IPersistentTransactionS
     @Override
     public void updateBillAmountAndStatus(Long billId, int reduceAmount, int oldStatus, int status) {
 
-        int row1 = billMapper.updateBillCurrentAmount(billId, reduceAmount);
+        int row1 = billMapper.updateBillStatus(billId, oldStatus, status);
 
         if(row1 < 1){
-            throw new ValidateException("billId = " + billId + ":更新currentAmount失败");
-        }
-
-        int row2 = billMapper.updateBillStatus(billId,oldStatus,status);
-
-        if(row2 < 1){
             throw new ValidateException("billId = " + billId + ":状态有误");
         }
 
+        int row2 = billMapper.updateBillCurrentAmount(billId, reduceAmount);
+
+        if(row2 < 1){
+            throw new ValidateException("billId = " + billId + ":更新currentAmount失败");
+        }
 
     }
 }

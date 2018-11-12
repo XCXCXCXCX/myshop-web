@@ -7,8 +7,9 @@ package com.xcxcxcxcx.myshop.divide.dal.persistence;
  */
 public enum BillStatusEnum {
 
-    NEW(0,"未领取"),
-    OBTAINED(1,"已领取");
+    NEW(0,"未支付"),
+    PAYED(1,"已支付"),
+    OBTAINED(2,"已领取");
 
 
 

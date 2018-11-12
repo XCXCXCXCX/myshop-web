@@ -17,7 +17,7 @@ public class PaymentTransferRequest extends AbstractRequest{
 
     private String userAccount;
 
-    private int transferAmount;
+    private Double transferAmount;
 
     public Long getTopicId() {
         return topicId;
@@ -51,11 +51,11 @@ public class PaymentTransferRequest extends AbstractRequest{
         this.userAccount = userAccount;
     }
 
-    public int getTransferAmount() {
+    public Double getTransferAmount() {
         return transferAmount;
     }
 
-    public void setTransferAmount(int transferAmount) {
+    public void setTransferAmount(Double transferAmount) {
         this.transferAmount = transferAmount;
     }
 

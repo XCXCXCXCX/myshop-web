@@ -11,8 +11,6 @@ public class TopicSettleAccountsRequest extends AbstractRequest{
 
     private Long topicId;
 
-    private Long durationTime;
-
     public Long getTopicId() {
         return topicId;
     }
@@ -21,19 +19,10 @@ public class TopicSettleAccountsRequest extends AbstractRequest{
         this.topicId = topicId;
     }
 
-    public Long getDurationTime() {
-        return durationTime;
-    }
-
-    public void setDurationTime(Long durationTime) {
-        this.durationTime = durationTime;
-    }
-
     @Override
     public String toString() {
         return "TopicSettleAccountsRequest{" +
                 "topicId=" + topicId +
-                ", durationTime=" + durationTime +
                 '}';
     }
 }

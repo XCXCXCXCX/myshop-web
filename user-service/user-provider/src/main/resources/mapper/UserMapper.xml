@@ -13,6 +13,12 @@
         WHERE username = #{username}
     </select>
 
+    <select id="getUserByUserId"
+            resultType="com.xcxcxcxcx.myshop.user.dal.entity.User">
+        SELECT <include refid="Base_Column_List"/> FROM myshop_user
+        WHERE id = #{userId}
+    </select>
+
     <insert id="insertSelective"
             parameterType="com.xcxcxcxcx.myshop.user.dal.entity.User"
             keyColumn="id"

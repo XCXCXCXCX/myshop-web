@@ -138,6 +138,36 @@ public class UserCoreServiceImpl implements IUserCoreSerivce {
         return response;
     }
 
+    @Override
+    public UserQueryResponse queryUserByUserid(UserQueryRequest request) {
+        UserQueryResponse response = new UserQueryResponse();
+
+        try {
+            validateRequest(request);
+
+            User user = userMapper.getUserByUserId(request.getUserId());
+
+            response.setCode(ResponseCodeEnum.SUCCESS.getCode());
+            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
+            response.setId(user.getId());
+            response.setUsername(user.getUsername());
+            response.setAlipayNumber(user.getAlipayNumber());
+            response.setWechatNumber(user.getWechatNumber());
+            response.setCreateTime(user.getCreateTime());
+            response.setStatus(user.getStatus());
+
+        }catch (Exception e){
+            logger.error("queryUserByUserid occur exception :" + e);
+            ServiceException serviceException = (ServiceException) ExceptionUtils.handlerException4biz(e);
+            response.setCode(serviceException.getErrorCode());
+            response.setMsg(serviceException.getErrorMessage());
+        }finally {
+            logger.info("queryUserByUserid response: {"+ response +"}");
+        }
+
+        return response;
+    }
+
     private void validateRequest(AbstractRequest request) {
         if(request == null){
             throw new ValidateException("请求对象为空");
@@ -168,6 +198,12 @@ public class UserCoreServiceImpl implements IUserCoreSerivce {
                 throw new ValidateException("用户名已存在");
             }
 
+        }
+
+        if(request instanceof UserQueryRequest){
+            if (StringUtils.isEmpty(((UserQueryRequest) request).getUserId())) {
+                throw new ValidateException("userId为空");
+            }
         }
 
         if(request instanceof ValidateTokenRequest){

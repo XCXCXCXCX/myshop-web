@@ -15,7 +15,7 @@ public class PayEntity {
 
     private Long userId;
 
-    private int payAmount;
+    private Double payAmount;
 
     private Date payDate;
 
@@ -45,11 +45,11 @@ public class PayEntity {
         this.userId = userId;
     }
 
-    public int getPayAmount() {
+    public Double getPayAmount() {
         return payAmount;
     }
 
-    public void setPayAmount(int payAmount) {
+    public void setPayAmount(Double payAmount) {
         this.payAmount = payAmount;
     }
 

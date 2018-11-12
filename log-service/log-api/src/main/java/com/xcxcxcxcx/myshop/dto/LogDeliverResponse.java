@@ -8,4 +8,9 @@ import com.xcxcxcxcx.service.support.core.response.AbstractResponse;
  * @comments
  */
 public class LogDeliverResponse extends AbstractResponse{
+
+    @Override
+    public String toString() {
+        return "LogDeliverResponse{}";
+    }
 }

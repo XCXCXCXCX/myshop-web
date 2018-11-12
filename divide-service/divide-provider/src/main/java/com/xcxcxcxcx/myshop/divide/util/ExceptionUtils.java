@@ -28,7 +28,7 @@ public class ExceptionUtils{
             return null;
         }
         if (e instanceof ValidateException) {
-            ex = new ServiceException(((ValidateException) e).getErrorCode(), ((ValidateException) e).getErrorMessage());
+            ex = new ServiceException(((ValidateException) e).getErrorCode(), e.getMessage());
         }else if (e instanceof Exception) {
             ex = new ServiceException(ResponseCodeEnum.SYSTEM_BUSY.getCode(),
                     ResponseCodeEnum.SYSTEM_BUSY.getMsg());

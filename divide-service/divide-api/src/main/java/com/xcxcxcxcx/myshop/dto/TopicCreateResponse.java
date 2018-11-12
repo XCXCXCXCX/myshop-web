@@ -9,8 +9,20 @@ import com.xcxcxcxcx.service.support.core.response.AbstractResponse;
  */
 public class TopicCreateResponse extends AbstractResponse{
 
+    private Long topicId;
+
+    public Long getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
+    }
+
     @Override
     public String toString() {
-        return "TopicCreateResponse{}";
+        return "TopicCreateResponse{" +
+                "topicId=" + topicId +
+                '}';
     }
 }

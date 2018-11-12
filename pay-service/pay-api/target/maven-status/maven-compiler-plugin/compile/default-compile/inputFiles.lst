@@ -1,6 +1,9 @@
-D:\myself\workplace\project\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentResponse.java
-D:\myself\workplace\project\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\constants\ResponseCodeEnum.java
-D:\myself\workplace\project\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\IPayCoreService.java
-D:\myself\workplace\project\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentRequest.java
-D:\myself\workplace\project\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentNotifyResponse.java
-D:\myself\workplace\project\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentNotifyRequest.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentTransferRequest.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\IPayCoreService.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\constants\ResponseCodeEnum.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\constants\PayChannelEnum.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentNotifyRequest.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentRequest.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentNotifyResponse.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentResponse.java
+D:\myself\workplace\project\myshop-web\pay-service\pay-api\src\main\java\com\xcxcxcxcx\myshop\dto\PaymentTransferResponse.java

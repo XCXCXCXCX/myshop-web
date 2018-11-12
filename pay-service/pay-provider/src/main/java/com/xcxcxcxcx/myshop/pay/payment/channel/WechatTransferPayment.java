@@ -2,6 +2,7 @@ package com.xcxcxcxcx.myshop.pay.payment.channel;
 
 import com.alibaba.dubbo.common.logger.Logger;
 import com.alibaba.dubbo.common.logger.LoggerFactory;
+import com.xcxcxcxcx.myshop.constants.PayChannelEnum;
 import com.xcxcxcxcx.myshop.constants.ResponseCodeEnum;
 import com.xcxcxcxcx.myshop.dto.*;
 import com.xcxcxcxcx.myshop.pay.dal.entity.PayEntity;
@@ -9,7 +10,6 @@ import com.xcxcxcxcx.myshop.pay.dal.persistence.PayMapper;
 import com.xcxcxcxcx.myshop.pay.payment.abs.BasePayment;
 import com.xcxcxcxcx.myshop.pay.payment.abs.PaymentContext;
 import com.xcxcxcxcx.myshop.pay.payment.abs.Validator;
-import com.xcxcxcxcx.myshop.pay.payment.constants.PayChannelEnum;
 import com.xcxcxcxcx.myshop.pay.payment.context.WechatTransferContext;
 import com.xcxcxcxcx.myshop.pay.service.ILogSenderService;
 import com.xcxcxcxcx.myshop.pay.util.LogEntityBuilder;

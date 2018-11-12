@@ -15,6 +15,9 @@ public interface IDivideCoreService {
     //加入topic
     TopicJoinResponse joinTopic(TopicJoinRequest request);
 
+    //update bill after pay
+    AfterPayUpdateResponse updateAfterPay(AfterPayUpdateRequest request);
+
     //查看topic by userid
     TopicQueryByUseridResponse topicQueryByUserid(TopicQueryByUseridRequest request);
 

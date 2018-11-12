@@ -1,0 +1,7 @@
+com\xcxcxcxcx\myshop\divide\kafka\producer\config\KafkaAutoConfiguration.class
+com\xcxcxcxcx\myshop\divide\service\impl\PersistentTransactionServiceImpl.class
+com\xcxcxcxcx\myshop\divide\dal\persistence\BillStatusEnum.class
+com\xcxcxcxcx\myshop\divide\dal\persistence\TopicStatusEnum.class
+com\xcxcxcxcx\myshop\divide\service\ILogSenderService.class
+com\xcxcxcxcx\myshop\divide\service\impl\LogSenderServiceImpl.class
+com\xcxcxcxcx\myshop\divide\service\IPersistentTransactionService.class

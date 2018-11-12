@@ -11,6 +11,9 @@ public interface UserMapper {
 
     User getUserByUsername(String username);
 
+    User getUserByUserId(Long userId);
+
     int insertSelective(User user);
+
 
 }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xcxcxcxcx.myshop.divide.dal.persistence.BillMapper">
+
+    <insert id="insertBill"
+            parameterType="com.xcxcxcxcx.myshop.divide.dal.entity.Bill"
+            useGeneratedKeys="true"
+            keyColumn="bill_id">
+        INSERT INTO myshop_bill
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="topicId != null">
+                topic_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="currentAmount != null">
+                current_amount,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="topicId != null">
+                #{topicId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="currentAmount != null">
+                #{currentAmount,jdbcType=DECIMAL},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <sql id="Base_Column_List" >
+        bill_id, topic_id, user_id, current_amount, status
+    </sql>
+
+    <select id="getBillByTopicidAndUserid"
+            resultType="com.xcxcxcxcx.myshop.divide.dal.entity.Bill">
+        SELECT <include refid="Base_Column_List"/>
+        FROM myshop_bill
+        WHERE topic_id = #{topicId}
+        AND user_id = #{userId}
+    </select>
+
+    <select id="getBillByTopicid"
+            resultType="java.util.ArrayList">
+        SELECT <include refid="Base_Column_List"/>
+        FROM myshop_bill
+        WHERE topic_id = #{topicId}
+    </select>
+
+    <update id="updateBillStatus"
+            useGeneratedKeys="true"
+            keyColumn="bill_id">
+        UPDATE myshop_bill
+        SET status = #{status}
+        where bill_id = #{billId}
+        AND status = #{oldStatus}
+    </update>
+
+    <select id="getBillByBillid"
+            resultType="com.xcxcxcxcx.myshop.divide.dal.entity.Bill">
+        SELECT <include refid="Base_Column_List"/>
+        FROM myshop_bill
+        WHERE bill_id = #{billId}
+    </select>
+
+    <update id="updateBillCurrentAmount"
+            useGeneratedKeys="true"
+            keyColumn="bill_id">
+        UPDATE myshop_bill
+        SET current_amount = current_amount - #{reduceAmount}
+        where bill_id = #{billId}
+    </update>
+</mapper>

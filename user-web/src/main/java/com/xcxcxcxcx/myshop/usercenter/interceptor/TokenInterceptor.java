@@ -1,19 +1,18 @@
 package com.xcxcxcxcx.myshop.usercenter.interceptor;
 
+import com.xcxcxcxcx.common.BaseController;
 import com.xcxcxcxcx.common.annotation.Anoymous;
 import com.xcxcxcxcx.common.constants.MyshopWebConstant;
 import com.xcxcxcxcx.common.utils.CookieUtil;
 import com.xcxcxcxcx.myshop.IUserCoreSerivce;
 import com.xcxcxcxcx.myshop.dto.ValidateTokenRequest;
 import com.xcxcxcxcx.myshop.dto.ValidateTokenResponse;
-import com.xcxcxcxcx.myshop.usercenter.controller.BaseController;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

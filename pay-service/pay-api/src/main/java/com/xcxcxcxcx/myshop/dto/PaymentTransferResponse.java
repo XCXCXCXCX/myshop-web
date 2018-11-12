@@ -18,4 +18,11 @@ public class PaymentTransferResponse extends AbstractResponse{
     public void setTradeNo(String tradeNo) {
         this.tradeNo = tradeNo;
     }
+
+    @Override
+    public String toString() {
+        return "PaymentTransferResponse{" +
+                "tradeNo='" + tradeNo + '\'' +
+                '}';
+    }
 }

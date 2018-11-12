@@ -7,6 +7,7 @@ import com.xcxcxcxcx.myshop.constants.ResponseCodeEnum;
 import com.xcxcxcxcx.myshop.divide.dal.entity.Bill;
 import com.xcxcxcxcx.myshop.divide.dal.entity.Topic;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.BillMapper;
+import com.xcxcxcxcx.myshop.divide.dal.persistence.BillStatusEnum;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.TopicMapper;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.TopicStatusEnum;
 import com.xcxcxcxcx.myshop.divide.exception.ServiceException;
@@ -17,7 +18,6 @@ import com.xcxcxcxcx.myshop.divide.util.ExceptionUtils;
 import com.xcxcxcxcx.myshop.divide.util.LogEntityBuilder;
 import com.xcxcxcxcx.myshop.dto.*;
 import com.xcxcxcxcx.service.support.core.request.AbstractRequest;
-import org.apache.kafka.clients.producer.internals.TransactionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,6 @@ import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -74,32 +73,27 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
             //验证
             validateRequest(topicPreFetchRequest);
 
+            Long topicId = topicPreFetchRequest.getTopicId();
+            Topic topic = topicMapper.getTopicByTopicid(topicId);
+            if (topic == null) {
+                response.setCode(ResponseCodeEnum.TOPIC_NOT_EXIST.getCode());
+                response.setMsg(ResponseCodeEnum.TOPIC_NOT_EXIST.getMsg());
+                return response;
+            }
+
             //提交延迟任务，延迟delayTime
             delayExecutor.schedule(() -> {
 
-                Long topicId = topicPreFetchRequest.getTopicId();
-
                 //延迟任务：
-                //1.检查mysql中是否存在该topic并检查该topic状态
-                Topic topic = topicMapper.getTopicByTopicid(topicId);
-                if (topic == null) {
-                    //日志记录
-                    logger.error("topicId = " + topicId + "-> 不存在该topic，无法preFetch");
-                    //日志记录
+                //1.更新状态
+                int row = topicMapper.updateTopicStatus(topicId, TopicStatusEnum.NEW.getCode(), TopicStatusEnum.PREPARE.getCode());
+
+                if(row < 1){
+                    logger.error("topicId = " + topicId + "-> 该topic状态异常或系统繁忙");
                     LogEntityBuilder.LogEntity logEntity =
                             LogEntityBuilder.createLog(LogEntityBuilder.OpTypeEnum.ERROR
                                     , 0L
-                                    , "topicId = " + topicId + "-> preFetch失败，请重试,cause of : 不存在该topic，无法preFetch").build();
-                    logSenderService.synDeliver(logger, logEntity);
-                    return;
-                }
-                if (topic.getStatus() != 0) {
-                    //日志记录
-                    logger.error("topicId = " + topicId + "-> topic状态有误，无法preFetch");
-                    LogEntityBuilder.LogEntity logEntity =
-                            LogEntityBuilder.createLog(LogEntityBuilder.OpTypeEnum.ERROR
-                                    , 0L
-                                    , "topicId = " + topicId + "-> preFetch失败，请重试,cause of : topic状态有误，无法preFetch").build();
+                                    , "topicId = " + topicId + "-> preFetch失败，请重试,cause of : 该topic状态异常或系统繁忙").build();
                     logSenderService.synDeliver(logger, logEntity);
                     return;
                 }
@@ -111,7 +105,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
                 List<Bill> legalBillList = null;
                 if (billList != null) {
                     legalBillList = billList.stream().filter(bill ->
-                            bill.getStatus() == 1
+                            bill.getStatus() == BillStatusEnum.PAYED.getCode()
                     ).collect(Collectors.toList());
                     size = legalBillList.size();
                 }
@@ -145,9 +139,9 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
                     return;
                 }
 
-                //3.更新mysql中topic的status = 2 进入抢购状态
-                int row = topicMapper.updateTopicStatus(topicId, TopicStatusEnum.PREPARE.getCode(), TopicStatusEnum.DOING.getCode());
-                if (row < 1) {
+                //3.更新mysql中topic的status = DOING 进入抢购状态
+                int row2 = topicMapper.updateTopicStatus(topicId, TopicStatusEnum.PREPARE.getCode(), TopicStatusEnum.DOING.getCode());
+                if (row2 < 1) {
                     logger.error("topicId = " + topicId + " preFetch成功但mysql更新状态失败");
                     //日志记录
                     LogEntityBuilder.LogEntity logEntity =
@@ -170,7 +164,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
             }, topicPreFetchRequest.getDelayTime(), TimeUnit.SECONDS);
 
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());
-            response.setMsg("preFetch任务投递成功");
+            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
 
         } catch (Exception e) {
             logger.error("topicPreFetch occur exception : " + e);
@@ -216,9 +210,26 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
                 throw new ValidateException("topicGrab异常，topic中不存在该用户记录!");
             }
 
-            Topic topic = topicMapper.getTopicByTopicid(topicId);
-            if(topic.getStatus() != TopicStatusEnum.DOING.getCode()){
+            if(bill.getStatus() != BillStatusEnum.PAYED.getCode()){
+                throw new ValidateException("topicGrab异常，该bill状态有误!");
+            }
 
+            Topic topic = topicMapper.getTopicByTopicid(topicId);
+
+            long now = System.currentTimeMillis();
+            if(topic.getActiveTime().getTime() > now
+                    || topic.getEndTime().getTime() < now){
+                throw new ValidateException("不在可抢时间段!");
+            }
+
+            if(topic.getStatus() == TopicStatusEnum.PREPARE.getCode()){
+                int row = topicMapper.updateTopicStatus(topicId, TopicStatusEnum.PREPARE.getCode(), TopicStatusEnum.DOING.getCode());
+                if(row < 1){
+                    throw new ValidateException("系统繁忙");
+                }
+            }
+
+            if(topic.getStatus() != TopicStatusEnum.DOING.getCode()){
                 throw new ValidateException("该topic目前不在可抢状态!");
             }
 
@@ -235,7 +246,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
             }
 
             //3.异步持久化到数据库
-            //1).更新topic的current_amount
+            //1).更新bill的current_amount
             //2).更新topic下的bill的status
             asynPersistentExecutor.submit(() -> {
 
@@ -243,8 +254,8 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
                     persistentTransactionService.updateBillAmountAndStatus(
                             bill.getBillId(),
                             Integer.parseInt(userAmount.toString()),
-                            0,
-                            1);
+                            BillStatusEnum.PAYED.getCode(),
+                            BillStatusEnum.OBTAINED.getCode());
                 } catch (Exception e) {
                     TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
                     //日志记录
@@ -278,10 +289,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
 
             validateRequest(topicSettleAccountsRequest);
 
-            delayExecutor.schedule(() ->
-                            doSettleAccounts(topicSettleAccountsRequest),
-                    topicSettleAccountsRequest.getDurationTime(),
-                    TimeUnit.SECONDS);
+            doSettleAccounts(topicSettleAccountsRequest,response);
 
         } catch (Exception e) {
             logger.error("topicSettleAccounts occur exception : " + e);
@@ -295,7 +303,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
         return response;
     }
 
-    private void doSettleAccounts(TopicSettleAccountsRequest topicSettleAccountsRequest) {
+    private void doSettleAccounts(TopicSettleAccountsRequest topicSettleAccountsRequest, TopicSettleAccountsResponse response) {
         //对账
         Long topicId = topicSettleAccountsRequest.getTopicId();
 
@@ -303,7 +311,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
         //从mysql中读取数据
         List<Bill> billList = billMapper.getBillByTopicid(topicId);
         List<Bill> mysqlNeedToPayBillList = billList.stream()
-                .filter(x -> x.getStatus() == 0)
+                .filter(x -> x.getStatus() == 1)
                 .collect(Collectors.toList());
 
         //从redis中读取数据
@@ -329,7 +337,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
 
             billMapper.updateBillCurrentAmount(billId, remainUnitAmount);
 
-            billMapper.updateBillStatus(billId, 0, 1);
+            billMapper.updateBillStatus(billId, BillStatusEnum.PAYED.getCode(), BillStatusEnum.OBTAINED.getCode());
 
         }
 
@@ -338,7 +346,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
         int current = newBillList.size();
         int currentSuccess = newBillList
                 .stream()
-                .filter(x -> x.getStatus() == 1)
+                .filter(x -> x.getStatus() == BillStatusEnum.OBTAINED.getCode())
                 .collect(Collectors.toList())
                 .size();
 
@@ -348,17 +356,24 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
             redisTemplate.delete(topicId);
             redisTemplate.delete(topicId + "_set");
 
+            response.setCode(ResponseCodeEnum.SUCCESS.getCode());
+            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
+
         } else {
 
-            logger.error("对账有误，result : current = " + current + " but currentSuccess = " + currentSuccess);
-            LogEntityBuilder.LogEntity logEntity = LogEntityBuilder.createLog(LogEntityBuilder.OpTypeEnum.ERROR,
-                    0L, "对账有误，result : current = " + current + " but currentSuccess = " + currentSuccess).build();
-            logSenderService.synDeliver(logger, logEntity);
+            response.setCode(ResponseCodeEnum.SETTLE_ACCOUNT_ERROR.getCode());
+            String msg = "对账有误，result : current = " + current + " but currentSuccess = " + currentSuccess;
+            response.setMsg(msg);
+            logger.error(msg);
 
         }
 
         //topic结束
-        topicMapper.updateTopicStatus(topicId, TopicStatusEnum.DOING.getCode(), TopicStatusEnum.END.getCode());
+        int row = topicMapper.updateTopicStatus(topicId, TopicStatusEnum.DOING.getCode(), TopicStatusEnum.END.getCode());
+
+        if(row < 1){
+            logger.error("更新topic状态为end失败: topicId=" + topicId);
+        }
 
     }
 
@@ -380,7 +395,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
                 logger.debug("处理redis数据时，在mysql获取该用户对应bill出错 : " + bills.toString() );
                 throw new ValidateException("对账出错,reason => 处理redis数据时，在mysql获取该用户对应bill出错 : " + bills.toString());
             }
-            billMapper.updateBillStatus(bills.get(0), 0, 1);
+            billMapper.updateBillStatus(bills.get(0), BillStatusEnum.PAYED.getCode(), BillStatusEnum.OBTAINED.getCode());
 
             i++;
         }
@@ -413,9 +428,6 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
         if (request instanceof TopicSettleAccountsRequest) {
             if (StringUtils.isEmpty(((TopicSettleAccountsRequest) request).getTopicId())) {
                 throw new ValidateException("topicId为空");
-            }
-            if (StringUtils.isEmpty(((TopicSettleAccountsRequest) request).getDurationTime())) {
-                throw new ValidateException("durationTime为空");
             }
         }
 

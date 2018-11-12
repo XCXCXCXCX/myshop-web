@@ -4,7 +4,7 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="user-web" owner="mic"/>
+    <dubbo:application name="user-web" owner="xc"/>
 
     <dubbo:registry protocol="zookeeper" group="dubbo-dev"
                     address="192.168.179.130:2181"/>

@@ -1,5 +1,6 @@
 com\xcxcxcxcx\myshop\dto\PaymentNotifyRequest.class
 com\xcxcxcxcx\myshop\dto\PaymentNotifyResponse.class
+com\xcxcxcxcx\myshop\constants\PayChannelEnum.class
 com\xcxcxcxcx\myshop\constants\ResponseCodeEnum.class
 com\xcxcxcxcx\myshop\dto\PaymentResponse.class
 com\xcxcxcxcx\myshop\dto\PaymentRequest.class

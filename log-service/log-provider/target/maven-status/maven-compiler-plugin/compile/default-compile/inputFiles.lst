@@ -1,0 +1,13 @@
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\dal\persistence\LogMapper.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\util\ExceptionUtils.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\notify\Bootstrap.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\service\impl\LogCollectServiceImpl.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\service\ILogSenderService.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\kafka\consumer\LogMessageListener.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\exception\ServiceException.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\kafka\producer\config\KafkaAutoConfiguration.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\dal\dto\LogQuery.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\exception\ValidateException.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\service\impl\LogSenderServiceImpl.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\dal\entity\LogEntity.java
+D:\myself\workplace\project\myshop-web\log-service\log-provider\src\main\java\com\xcxcxcxcx\myshop\log\kafka\consumer\config\KafkaConsumerConfig.java

@@ -73,5 +73,6 @@
     <context:component-scan base-package="com.xcxcxcxcx.myshop.divide.dal" />
     <context:component-scan base-package="com.xcxcxcxcx.myshop.divide.service" />
     <context:component-scan base-package="com.xcxcxcxcx.myshop.divide.notify" />
+    <context:component-scan base-package="com.xcxcxcxcx.myshop.divide.kafka" />
 
 </beans>

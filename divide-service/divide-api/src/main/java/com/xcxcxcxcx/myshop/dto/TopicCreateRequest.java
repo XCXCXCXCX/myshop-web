@@ -9,31 +9,19 @@ import com.xcxcxcxcx.service.support.core.request.AbstractRequest;
  */
 public class TopicCreateRequest extends AbstractRequest {
 
-    private Long topicId;
-
-    private int unitAmount;
+    private Double unitAmount;
 
     private Long publisherId;
-
-    private int status;
 
     private Long delayBeginTime;
 
     private Long duration;
 
-    public Long getTopicId() {
-        return topicId;
-    }
-
-    public void setTopicId(Long topicId) {
-        this.topicId = topicId;
-    }
-
-    public int getUnitAmount() {
+    public Double getUnitAmount() {
         return unitAmount;
     }
 
-    public void setUnitAmount(int unitAmount) {
+    public void setUnitAmount(Double unitAmount) {
         this.unitAmount = unitAmount;
     }
 
@@ -43,14 +31,6 @@ public class TopicCreateRequest extends AbstractRequest {
 
     public void setPublisherId(Long publisherId) {
         this.publisherId = publisherId;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
     }
 
     public Long getDelayBeginTime() {
@@ -72,10 +52,8 @@ public class TopicCreateRequest extends AbstractRequest {
     @Override
     public String toString() {
         return "TopicCreateRequest{" +
-                "topicId=" + topicId +
                 ", unitAmount=" + unitAmount +
                 ", publisherId=" + publisherId +
-                ", status=" + status +
                 ", delayBeginTime=" + delayBeginTime +
                 ", duration=" + duration +
                 '}';

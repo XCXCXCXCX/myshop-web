@@ -18,4 +18,11 @@ public class LogCleanResponse extends AbstractResponse{
     public void setDelRow(int delRow) {
         this.delRow = delRow;
     }
+
+    @Override
+    public String toString() {
+        return "LogCleanResponse{" +
+                "delRow=" + delRow +
+                '}';
+    }
 }

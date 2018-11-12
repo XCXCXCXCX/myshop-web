@@ -1,6 +1,6 @@
 package com.xcxcxcxcx.myshop.divide.dal.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 /**
  * @author XCXCXCXCX
@@ -17,11 +17,11 @@ public class Topic {
 
     private int status;
 
-    private Date beginTime;
+    private Timestamp beginTime;
 
-    private Date activeTime;
+    private Timestamp activeTime;
 
-    private Date endTime;
+    private Timestamp endTime;
 
     public Long getTopicId() {
         return topicId;
@@ -55,27 +55,27 @@ public class Topic {
         this.status = status;
     }
 
-    public Date getBeginTime() {
+    public Timestamp getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(Date beginTime) {
+    public void setBeginTime(Timestamp beginTime) {
         this.beginTime = beginTime;
     }
 
-    public Date getActiveTime() {
+    public Timestamp getActiveTime() {
         return activeTime;
     }
 
-    public void setActiveTime(Date activeTime) {
+    public void setActiveTime(Timestamp activeTime) {
         this.activeTime = activeTime;
     }
 
-    public Date getEndTime() {
+    public Timestamp getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(Timestamp endTime) {
         this.endTime = endTime;
     }
 }

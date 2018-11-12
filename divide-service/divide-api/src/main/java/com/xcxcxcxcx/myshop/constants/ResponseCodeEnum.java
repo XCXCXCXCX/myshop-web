@@ -15,7 +15,8 @@ public enum ResponseCodeEnum {
     TOPIC_ERROR_STATUS("00002003","topic状态有误"),
     BILL_NOT_EXIST("00002004","账单不存在"),
     BILL_EXISTED("00002005","账单已存在"),
-    BILL_ERROR_STATUS("00002006","账单状态有误");
+    BILL_ERROR_STATUS("00002006","账单状态有误"),
+    SETTLE_ACCOUNT_ERROR("00003001","对账有误");
 
     private String code;
 

@@ -3,15 +3,13 @@ package com.xcxcxcxcx.myshop.pay.service.impl;
 import com.alibaba.dubbo.common.logger.Logger;
 import com.alibaba.dubbo.common.logger.LoggerFactory;
 import com.xcxcxcxcx.myshop.IPayCoreService;
-import com.xcxcxcxcx.myshop.constants.ResponseCodeEnum;
+import com.xcxcxcxcx.myshop.constants.PayChannelEnum;
 import com.xcxcxcxcx.myshop.dto.*;
 import com.xcxcxcxcx.myshop.pay.exception.ServiceException;
 import com.xcxcxcxcx.myshop.pay.payment.abs.BasePayment;
-import com.xcxcxcxcx.myshop.pay.payment.constants.PayChannelEnum;
 import com.xcxcxcxcx.myshop.pay.util.ExceptionUtils;
 import com.xcxcxcxcx.service.support.core.request.AbstractRequest;
 
-import javax.xml.ws.Response;
 import java.util.HashMap;
 import java.util.Map;
 

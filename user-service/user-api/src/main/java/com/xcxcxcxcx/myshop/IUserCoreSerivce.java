@@ -15,4 +15,5 @@ public interface IUserCoreSerivce {
 
     ValidateTokenResponse validateToken(ValidateTokenRequest request);
 
+    UserQueryResponse queryUserByUserid(UserQueryRequest request);
 }

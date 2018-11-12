@@ -1,6 +1,7 @@
 package com.xcxcxcxcx.myshop.divide.dal.persistence;
 
 import com.xcxcxcxcx.myshop.divide.dal.entity.Topic;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,7 +14,9 @@ public interface TopicMapper {
 
     int insertTopic(Topic topic);
 
-    int updateTopicStatus(Long topicId, int oldStatus, int status);
+    int updateTopicStatus(@Param("topicId") Long topicId,
+                          @Param("oldStatus") int oldStatus,
+                          @Param("status") int status);
 
     List<Topic> getTopicByUserid(Long userId);
 

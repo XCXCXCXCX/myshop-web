@@ -1,4 +1,4 @@
-package com.xcxcxcxcx.myshop.pay.payment.constants;
+package com.xcxcxcxcx.myshop.constants;
 
 /**
  * @author XCXCXCXCX

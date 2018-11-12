@@ -14,7 +14,7 @@ public class PaymentContext {
     private String tradeNo;
 
     //总金额
-    private int totalAmount;
+    private Double totalAmount;
 
     public String getTradeNo() {
         return tradeNo;
@@ -24,11 +24,11 @@ public class PaymentContext {
         this.tradeNo = tradeNo;
     }
 
-    public int getTotalAmount() {
+    public Double getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(int totalAmount) {
+    public void setTotalAmount(Double totalAmount) {
         this.totalAmount = totalAmount;
     }
 }

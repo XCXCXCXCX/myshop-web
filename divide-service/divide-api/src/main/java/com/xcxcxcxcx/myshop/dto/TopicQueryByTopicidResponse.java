@@ -2,6 +2,8 @@ package com.xcxcxcxcx.myshop.dto;
 
 import com.xcxcxcxcx.service.support.core.response.AbstractResponse;
 
+import java.util.List;
+
 /**
  * @author XCXCXCXCX
  * @date 2018/10/31
@@ -16,6 +18,8 @@ public class TopicQueryByTopicidResponse extends AbstractResponse{
     private Long publisherId;
 
     private int status;
+
+    private List<BillEntity> billList;
 
     public Long getTopicId() {
         return topicId;
@@ -49,6 +53,14 @@ public class TopicQueryByTopicidResponse extends AbstractResponse{
         this.status = status;
     }
 
+    public List<BillEntity> getBillList() {
+        return billList;
+    }
+
+    public void setBillList(List<BillEntity> billList) {
+        this.billList = billList;
+    }
+
     @Override
     public String toString() {
         return "TopicQueryByTopicidResponse{" +
@@ -56,6 +68,7 @@ public class TopicQueryByTopicidResponse extends AbstractResponse{
                 ", unitAmount=" + unitAmount +
                 ", publisherId=" + publisherId +
                 ", status=" + status +
+                ", billList=" + billList.toString() +
                 '}';
     }
 }

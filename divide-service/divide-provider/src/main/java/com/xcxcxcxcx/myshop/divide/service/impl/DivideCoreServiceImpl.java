@@ -7,6 +7,7 @@ import com.xcxcxcxcx.myshop.constants.ResponseCodeEnum;
 import com.xcxcxcxcx.myshop.divide.dal.entity.Bill;
 import com.xcxcxcxcx.myshop.divide.dal.entity.Topic;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.BillMapper;
+import com.xcxcxcxcx.myshop.divide.dal.persistence.BillStatusEnum;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.TopicMapper;
 import com.xcxcxcxcx.myshop.divide.dal.persistence.TopicStatusEnum;
 import com.xcxcxcxcx.myshop.divide.exception.ServiceException;
@@ -17,9 +18,13 @@ import com.xcxcxcxcx.service.support.core.request.AbstractRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * @author XCXCXCXCX
@@ -44,14 +49,13 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
             validateRequest(topicCreateRequest);
 
             Topic topic = new Topic();
-            topic.setTopicId(topicCreateRequest.getTopicId());
             topic.setPublisherId(topicCreateRequest.getPublisherId());
             topic.setUnitAmount(topicCreateRequest.getUnitAmount());
             topic.setStatus(TopicStatusEnum.NEW.getCode());
             long nowTimeStamp = System.currentTimeMillis();
-            topic.setBeginTime(new Date(nowTimeStamp));
-            topic.setActiveTime(new Date(nowTimeStamp + topicCreateRequest.getDelayBeginTime()));
-            topic.setEndTime(new Date(nowTimeStamp + topicCreateRequest.getDuration()));
+            topic.setBeginTime(new Timestamp(nowTimeStamp));
+            topic.setActiveTime(new Timestamp(nowTimeStamp + topicCreateRequest.getDelayBeginTime()));
+            topic.setEndTime(new Timestamp(nowTimeStamp + topicCreateRequest.getDelayBeginTime() + topicCreateRequest.getDuration()));
             int row = topicMapper.insertTopic(topic);
             if(row < 1){
                 response.setCode(ResponseCodeEnum.SYSTEM_BUSY.getCode());
@@ -60,6 +64,7 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
             }
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());
             response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
+            response.setTopicId(topic.getTopicId());
 
         }catch (Exception e){
             logger.error("createTopic occur exception : " + e);
@@ -148,7 +153,7 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
             bill.setTopicId(topicId);
             bill.setUserId(userId);
             bill.setCurrentAmount(unitAmount);
-            bill.setStatus(0);
+            bill.setStatus(BillStatusEnum.NEW.getCode());
 
             int row = billMapper.insertBill(bill);
             if(row < 1){
@@ -216,12 +221,23 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
             validateRequest(topicQueryByTopicidRequest);
 
             Topic topic = topicMapper.getTopicByTopicid(topicQueryByTopicidRequest.getTopicId());
+            List<Bill> billList = billMapper.getBillByTopicid(topic.getTopicId());
+            List<BillEntity> billEntities = billList.stream().map(x->{
+                BillEntity billEntity = new BillEntity();
+                billEntity.setTopicId(x.getTopicId());
+                billEntity.setUserId(x.getUserId());
+                billEntity.setBillId(x.getBillId());
+                billEntity.setCurrentAmount(x.getCurrentAmount());
+                billEntity.setStatus(x.getStatus());
+                return billEntity;
+            }).collect(Collectors.toList());
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());
             response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
             response.setTopicId(topic.getTopicId());
             response.setPublisherId(topic.getPublisherId());
             response.setUnitAmount(topic.getUnitAmount());
             response.setStatus(topic.getStatus());
+            response.setBillList(billEntities);
 
         }catch (Exception e){
             logger.error("topicQueryByTopicid occur exception : " + e);
@@ -261,7 +277,37 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
         return response;
     }
 
-//    public BillStatusUpdateResponse billStatusUpdate(BillStatusUpdateRequest billStatusUpdateRequest) {
+    @Override
+    public AfterPayUpdateResponse updateAfterPay(AfterPayUpdateRequest afterPayUpdateRequest) {
+
+        AfterPayUpdateResponse response = new AfterPayUpdateResponse();
+
+        try{
+            validateRequest(afterPayUpdateRequest);
+
+            int row = billMapper.updateBillStatus(afterPayUpdateRequest.getBillId(), BillStatusEnum.NEW.getCode(), BillStatusEnum.PAYED.getCode());
+
+            if(row < 1){
+                throw new ValidateException("更新失败");
+            }
+
+            response.setCode(ResponseCodeEnum.SUCCESS.getCode());
+            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
+
+        }catch (Exception e){
+            logger.error("updateAfterPay occur exception : " + e);
+            ServiceException serviceException = (ServiceException) ExceptionUtils.handlerException4biz(e);
+            response.setCode(serviceException.getErrorCode());
+            response.setMsg(serviceException.getErrorMessage());
+        }finally {
+            logger.info("updateAfterPay response : " + response.toString());
+        }
+
+
+        return response;
+    }
+
+    //    public BillStatusUpdateResponse billStatusUpdate(BillStatusUpdateRequest billStatusUpdateRequest) {
 //
 //        BillStatusUpdateResponse response = new BillStatusUpdateResponse();
 //
@@ -312,9 +358,6 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
         }
 
         if(request instanceof TopicCreateRequest){
-            if(StringUtils.isEmpty(((TopicCreateRequest) request).getTopicId())){
-                throw new ValidateException("topicId为空");
-            }
             if(StringUtils.isEmpty(((TopicCreateRequest) request).getPublisherId())){
                 throw new ValidateException("publisherId为空");
             }
@@ -330,12 +373,9 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
                 ((TopicCreateRequest) request).setDuration(300*1000L);
             }
         }
-        if(request instanceof TopicStatusUpdateRequest){
-            if(StringUtils.isEmpty(((TopicStatusUpdateRequest) request).getTopicId())){
-                throw new ValidateException("topicId为空");
-            }
-            if(StringUtils.isEmpty(((TopicStatusUpdateRequest) request).getStatus())){
-                throw new ValidateException("status为空");
+        if(request instanceof AfterPayUpdateRequest){
+            if(StringUtils.isEmpty(((AfterPayUpdateRequest) request).getBillId())){
+                throw new ValidateException("billId为空");
             }
         }
         if(request instanceof TopicJoinRequest){
@@ -362,14 +402,6 @@ public class DivideCoreServiceImpl implements IDivideCoreService {
             }
             if(StringUtils.isEmpty(((BillQueryRequest) request).getTopicId())){
                 throw new ValidateException("topicId为空");
-            }
-        }
-        if(request instanceof BillStatusUpdateRequest){
-            if(StringUtils.isEmpty(((BillStatusUpdateRequest) request).getBillId())){
-                throw new ValidateException("billId为空");
-            }
-            if(StringUtils.isEmpty(((BillStatusUpdateRequest) request).getStatus())){
-                throw new ValidateException("status为空");
             }
         }
 
