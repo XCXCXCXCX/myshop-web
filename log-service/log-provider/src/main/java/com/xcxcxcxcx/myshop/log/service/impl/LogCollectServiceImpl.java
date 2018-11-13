@@ -121,7 +121,14 @@ public class LogCollectServiceImpl implements ILogCollectService{
             List<LogEntity> results =  logMapper.queryLog(logQuery);
             List<LogEntityBuilder.LogEntity> logEntities = new ArrayList<>();
             for(LogEntity result : results){
-                logEntities.add((LogEntityBuilder.LogEntity)result);
+                LogEntityBuilder.LogEntity logEntity = new LogEntityBuilder.LogEntity();
+                logEntity.setOpId(result.getOpId());
+                logEntity.setOpTime(result.getOpTime());
+                logEntity.setLogInfo(result.getLogInfo());
+                logEntity.setFromApp(result.getFromApp());
+                logEntity.setOpType(result.getOpType());
+                logEntity.setUserId(result.getUserId());
+                logEntities.add(logEntity);
             }
 
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());

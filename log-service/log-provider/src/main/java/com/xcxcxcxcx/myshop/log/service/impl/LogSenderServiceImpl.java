@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -31,10 +34,10 @@ public class LogSenderServiceImpl implements ILogSenderService {
 
         try{
 
-            ProducerRecord<String, LogEntityBuilder.LogEntity> record =
-                    new ProducerRecord<String, LogEntityBuilder.LogEntity>(LOG_TOPIC_NAME, logEntity);
+//            ProducerRecord<String, LogEntityBuilder.LogEntity> record =
+//                    new ProducerRecord<String, LogEntityBuilder.LogEntity>(LOG_TOPIC_NAME, logEntity);
 
-            kafkaTemplate.send(LOG_TOPIC_NAME, record).get(1000, TimeUnit.MILLISECONDS);
+            kafkaTemplate.send(LOG_TOPIC_NAME, logEntity).get(1000, TimeUnit.MILLISECONDS);
 
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());
             response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());

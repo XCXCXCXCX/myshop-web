@@ -1,6 +1,7 @@
 package com.xcxcxcxcx.myshop.pay.dal.persistence;
 
 import com.xcxcxcxcx.myshop.pay.dal.entity.PayEntity;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author XCXCXCXCX
@@ -9,7 +10,9 @@ import com.xcxcxcxcx.myshop.pay.dal.entity.PayEntity;
  */
 public interface PayMapper {
 
-    int insertPay(PayEntity payEntity);
+    int insertPay(@Param("payEntity") PayEntity payEntity);
 
-    int updatePayStatus(String payId, int oldStatus, int status);
+    int updatePayStatus(@Param("payId") String payId,
+                        @Param("oldStatus") int oldStatus,
+                        @Param("status") int status);
 }

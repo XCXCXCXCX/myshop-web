@@ -32,13 +32,13 @@ public class LogMessageListener{
 
         int row = 0;
         try {
-            row = logMapper.insertLog((LogEntity)logEntity);
+            row = logMapper.insertLog(new LogEntity(logEntity));
             if(row < 1){
                 logger.error("log消息持久化失败: " + logEntity.toString());
                 return;
             }
         }catch (Exception e){
-            logger.error("log消息持久化失败: " + logEntity.toString());
+            logger.error("log消息持久化失败: " + logEntity.toString() + "->e:" + e);
             return;
         }
 

@@ -1,6 +1,6 @@
 package com.xcxcxcxcx.myshop.pay.dal.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 /**
  * @author XCXCXCXCX
@@ -17,7 +17,7 @@ public class PayEntity {
 
     private Double payAmount;
 
-    private Date payDate;
+    private Timestamp payDate;
 
     private int status;
 
@@ -53,11 +53,11 @@ public class PayEntity {
         this.payAmount = payAmount;
     }
 
-    public Date getPayDate() {
+    public Timestamp getPayDate() {
         return payDate;
     }
 
-    public void setPayDate(Date payDate) {
+    public void setPayDate(Timestamp payDate) {
         this.payDate = payDate;
     }
 

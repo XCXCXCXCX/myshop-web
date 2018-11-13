@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="divide-web:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="divide-web_war.war">
+      <element id="artifact" artifact-name="divide-web:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -2,6 +2,7 @@ package com.xcxcxcxcx.myshop.dto;
 
 import com.xcxcxcxcx.service.support.core.request.AbstractRequest;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -23,7 +24,7 @@ public class PaymentRequest extends AbstractRequest{
 
     private String description;
 
-    private Date payDate;
+    private Timestamp payDate;
 
     public String getTradeNo() {
         return tradeNo;
@@ -73,11 +74,11 @@ public class PaymentRequest extends AbstractRequest{
         this.description = description;
     }
 
-    public Date getPayDate() {
+    public Timestamp getPayDate() {
         return payDate;
     }
 
-    public void setPayDate(Date payDate) {
+    public void setPayDate(Timestamp payDate) {
         this.payDate = payDate;
     }
 

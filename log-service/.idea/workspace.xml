@@ -19,31 +19,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LogQueryResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogQueryResponse.java">
+      <file leaf-file-name="KafkaAutoConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/producer/config/KafkaAutoConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="109">
+              <caret line="40" column="71" lean-forward="false" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-provider/pom.xml">
+      <file leaf-file-name="LogCollectServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogCollectServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2346">
-              <caret line="102" column="8" lean-forward="false" selection-start-line="102" selection-start-column="8" selection-end-line="106" selection-end-column="21" />
+            <state relative-caret-position="172">
+              <caret line="126" column="38" lean-forward="true" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log-reference.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/log-api/src/main/resources/client/log-reference.xml">
+      <file leaf-file-name="ILogSenderService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/ILogSenderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+            <state relative-caret-position="129">
+              <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -52,48 +52,80 @@
       <file leaf-file-name="LogMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log-provider/src/main/resources/mapper/LogMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="56" lean-forward="false" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+            <state relative-caret-position="69">
+              <caret line="3" column="69" lean-forward="false" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
               <folding>
-                <element signature="e#2080#2084#0" expanded="true" />
-                <element signature="e#2171#2175#0" expanded="true" />
-                <element signature="e#2500#2504#0" expanded="true" />
-                <marker date="1541658994679" expanded="true" signature="1762:1828" ph="SELECT * FRO... myshop_log" />
-                <marker date="1541658994679" expanded="true" signature="2447:2491" ph="DELETE FROM " />
-                <marker date="1541658994679" expanded="true" signature="2447:2521" ph="DELETE FROM " />
+                <marker date="1542103972983" expanded="true" signature="1767:1833" ph="SELECT * FRO... myshop_log" />
+                <marker date="1542103972983" expanded="true" signature="2452:2496" ph="DELETE FROM " />
+                <marker date="1542103972983" expanded="true" signature="2452:2526" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service-common.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-provider/src/main/resources/META-INF/spring/service-common.xml">
+      <file leaf-file-name="LogSenderServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogSenderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogCleanResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogCleanResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogDeliverResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogDeliverResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state relative-caret-position="194">
+              <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
               <folding>
-                <element signature="e#268#269#0" expanded="true" />
-                <element signature="e#313#314#0" expanded="true" />
+                <marker date="1542102907727" expanded="false" signature="1287:1323" ph="&lt;~&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KafkaConsumerConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/config/KafkaConsumerConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="62" column="53" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogMessageListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/LogMessageListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/entity/LogEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#828#829#0" expanded="true" />
+                <element signature="e#858#859#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#964#965#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
+                <element signature="e#1024#1025#0" expanded="true" />
+                <element signature="e#1066#1067#0" expanded="true" />
+                <element signature="e#1102#1103#0" expanded="true" />
+                <element signature="e#1133#1134#0" expanded="true" />
+                <element signature="e#1162#1163#0" expanded="true" />
+                <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1240#1241#0" expanded="true" />
+                <element signature="e#1274#1275#0" expanded="true" />
+                <element signature="e#1304#1305#0" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1388#1389#0" expanded="true" />
+                <element signature="e#1422#1423#0" expanded="true" />
+                <element signature="e#1452#1453#0" expanded="true" />
+                <element signature="e#1498#1499#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,29 +134,34 @@
       <file leaf-file-name="LogEntityBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogEntityBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogQueryRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogQueryRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="27" column="24" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="27" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="service-provider.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-provider/src/main/resources/META-INF/spring/service-provider.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="83" column="9" lean-forward="false" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+              <folding>
+                <element signature="e#2309#2310#0" expanded="true" />
+                <element signature="e#2344#2345#0" expanded="true" />
+                <element signature="e#2386#2387#0" expanded="true" />
+                <element signature="e#2426#2427#0" expanded="true" />
+                <element signature="e#2460#2461#0" expanded="true" />
+                <element signature="e#2497#2498#0" expanded="true" />
+                <element signature="e#2542#2543#0" expanded="true" />
+                <element signature="e#2586#2587#0" expanded="true" />
+                <element signature="e#2621#2622#0" expanded="true" />
+                <element signature="e#2658#2659#0" expanded="true" />
+                <element signature="e#2704#2705#0" expanded="true" />
+                <element signature="e#2748#2749#0" expanded="true" />
+                <element signature="e#2783#2784#0" expanded="true" />
+                <element signature="e#2820#2821#0" expanded="true" />
+                <element signature="e#2866#2867#0" expanded="true" />
+                <element signature="e#2910#2911#0" expanded="true" />
+                <element signature="e#2948#2949#0" expanded="true" />
+                <element signature="e#2986#2987#0" expanded="true" />
+                <element signature="e#3036#3037#0" expanded="true" />
+                <element signature="e#3082#3083#0" expanded="true" />
+                <element signature="e#3120#3121#0" expanded="true" />
+                <element signature="e#3158#3159#0" expanded="true" />
+                <element signature="e#3208#3209#0" expanded="true" />
+                <element signature="e#3254#3255#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,6 +185,7 @@
       <find>group</find>
       <find>log</find>
       <find>logCoreService</find>
+      <find>ConsumerConfig</find>
     </findStrings>
     <replaceStrings>
       <replace>log</replace>
@@ -188,24 +226,24 @@
         <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/notify/Bootstrap.java" />
         <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/SenderTest.java" />
         <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/topic/KafkaTopicAutoConfiguration.java" />
-        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/config/KafkaConsumerConfig.java" />
         <option value="$PROJECT_DIR$/log-provider/src/main/resources/appliaction.properties" />
-        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/producer/config/KafkaAutoConfiguration.java" />
         <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/ILogSenderService.java" />
-        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogSenderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogEntityBuilder.java" />
         <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/dto/LogQuery.java" />
-        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/entity/LogEntity.java" />
         <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/persistence/LogMapper.java" />
-        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogCollectServiceImpl.java" />
-        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/LogMessageListener.java" />
         <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/persistence/LogMapper.xml" />
         <option value="$PROJECT_DIR$/log-provider/pom.xml" />
-        <option value="$PROJECT_DIR$/log-provider/src/main/resources/mapper/LogMapper.xml" />
         <option value="$PROJECT_DIR$/log-provider/src/main/resources/META-INF/spring/service-common.xml" />
         <option value="$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogCleanResponse.java" />
         <option value="$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogDeliverResponse.java" />
         <option value="$PROJECT_DIR$/log-api/src/main/resources/client/log-reference.xml" />
+        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/config/KafkaConsumerConfig.java" />
+        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/producer/config/KafkaAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogSenderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/LogMessageListener.java" />
+        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/entity/LogEntity.java" />
+        <option value="$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogEntityBuilder.java" />
+        <option value="$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogCollectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/log-provider/src/main/resources/mapper/LogMapper.xml" />
       </list>
     </option>
   </component>
@@ -337,6 +375,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -699,11 +738,165 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dal" />
+              <option name="myItemId" value="kafka" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="persistence" />
+              <option name="myItemId" value="producer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xcxcxcxcx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kafka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consumer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xcxcxcxcx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kafka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consumer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log-provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xcxcxcxcx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -754,56 +947,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log-provider" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xcxcxcxcx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dto" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -951,9 +1094,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -964,7 +1106,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../demo/mq-demo" />
     <property name="SearchEverywhereHistoryKey" value="NioEventLoopGroup&#9;FILE&#9;jar://C:/Users/XCXCXCXCX/.m2/repository/io/netty/netty/4.0.0.Alpha8/netty-4.0.0.Alpha8.jar!/io/netty/channel/socket/nio/NioEventLoopGroup.class&#10;JsonDeserializer&#9;FILE&#9;jar://C:/Users/XCXCXCXCX/.m2/repository/org/springframework/kafka/spring-kafka/2.1.7.RELEASE/spring-kafka-2.1.7.RELEASE.jar!/org/springframework/kafka/support/serializer/JsonDeserializer.class&#10;IntegerDeserializer&#9;FILE&#9;jar://C:/Users/XCXCXCXCX/.m2/repository/org/apache/kafka/kafka-clients/1.0.1/kafka-clients-1.0.1.jar!/org/apache/kafka/common/serialization/IntegerDeserializer.class" />
   </component>
   <component name="RecentsManager">
@@ -1458,47 +1600,48 @@
       <workItem from="1541380363025" duration="4878000" />
       <workItem from="1541650536803" duration="726000" />
       <workItem from="1541997363760" duration="1783000" />
+      <workItem from="1542088313083" duration="8440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41075000" />
+    <option name="totallyTimeSpent" value="49515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36231884" sideWeight="0.5030257" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1301059" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5072464" sideWeight="0.4969743" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21331316" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36070853" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5072464" sideWeight="0.4969743" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37443268" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37037036" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1509,7 +1652,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ObjectWriter.java</url>
+          <line>1388</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/LogMessageListener.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1518,701 +1675,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/notify/Bootstrap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MAVEN/com.xcxcxcxcx:log-provider:1.0-SNAPSHOT">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>com.xcxcxcxcx:log-provider:1.0-SNAPSHOT</OriginalElement>
-          <nodes>
-            <node x="0.0" y="1395.172641950349">com.xcxcxcxcx:log-provider:1.0-SNAPSHOT</node>
-            <node x="494.5" y="1099.1875">org.springframework:spring-context:jar:5.0.7.RELEASE</node>
-            <node x="753.5" y="1115.2783955045418">org.springframework:spring-context:jar:5.0.7.RELEASE/org.springframework:spring-aop:jar:5.0.7.RELEASE</node>
-            <node x="953.0" y="1064.2783955045418">org.springframework:spring-context:jar:5.0.7.RELEASE/org.springframework:spring-expression:jar:5.0.7.RELEASE</node>
-            <node x="1204.0" y="1365.5803470501276">org.springframework:spring-core:jar:5.0.7.RELEASE</node>
-            <node x="1438.5" y="1365.5803470501276">org.springframework:spring-core:jar:5.0.7.RELEASE/org.springframework:spring-jcl:jar:5.0.7.RELEASE</node>
-            <node x="967.0" y="1194.4553470501276">org.springframework:spring-beans:jar:5.0.7.RELEASE</node>
-            <node x="196.5" y="1153.4033955045418">org.springframework:spring-context-support:jar:5.0.7.RELEASE</node>
-            <node x="503.0" y="1525.0283955045418">org.springframework:spring-jdbc:jar:5.0.7.RELEASE</node>
-            <node x="231.0" y="1437.0283955045418">org.springframework:spring-orm:jar:5.0.7.RELEASE</node>
-            <node x="760.0" y="1415.2783955045418">org.springframework:spring-tx:jar:5.0.7.RELEASE</node>
-            <node x="244.5" y="1009.2529890004768">com.alibaba:dubbo:jar:2.6.4</node>
-            <node x="1654.5" y="1031.2783955045418">com.alibaba:dubbo:jar:2.6.4/org.javassist:javassist:jar:3.20.0-GA</node>
-            <node x="522.5" y="856.1101419503491">com.alibaba:dubbo:jar:2.6.4/org.jboss.netty:netty:jar:3.2.5.Final</node>
-            <node x="186.0" y="473.3601419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4</node>
-            <node x="481.0" y="301.1533955045418">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4</node>
-            <node x="745.0" y="284.6533955045418">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4</node>
-            <node x="962.5" y="284.6533955045418">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4</node>
-            <node x="1170.0" y="223.4851419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4/com.alibaba:dubbo-serialization-api:jar:2.6.4</node>
-            <node x="1177.5" y="498.6726419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-container-api:jar:2.6.4</node>
-            <node x="454.0" y="736.4851419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4</node>
-            <node x="1418.0" y="485.9226419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4</node>
-            <node x="1625.0" y="534.5995934959349">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/commons-logging:commons-logging:jar:1.2</node>
-            <node x="1664.0" y="620.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/log4j:log4j:jar:1.2.16</node>
-            <node x="1646.0" y="70.0">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.alibaba:hessian-lite:jar:3.2.4</node>
-            <node x="1656.0" y="0.0">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.alibaba:fastjson:jar:1.2.46</node>
-            <node x="1665.5" y="464.59959349593487">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1</node>
-            <node x="1851.5" y="544.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/com.esotericsoftware:reflectasm:jar:1.11.3</node>
-            <node x="2072.5" y="544.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/com.esotericsoftware:reflectasm:jar:1.11.3/org.ow2.asm:asm:jar:5.0.4</node>
-            <node x="1861.5" y="474.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/com.esotericsoftware:minlog:jar:1.3.0</node>
-            <node x="1854.0" y="404.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/org.objenesis:objenesis:jar:2.5.1</node>
-            <node x="1634.0" y="334.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.javakaffee:kryo-serializers:jar:0.42</node>
-            <node x="1868.5" y="334.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.javakaffee:kryo-serializers:jar:0.42/com.esotericsoftware:kryo:jar:4.0.0</node>
-            <node x="1671.5" y="140.0">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6</node>
-            <node x="1844.0" y="124.11014195034909">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.fasterxml.jackson.core:jackson-core:jar:2.8.6</node>
-            <node x="1857.5" y="54.11014195034909">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/org.javassist:javassist:jar:3.19.0-GA</node>
-            <node x="1854.0" y="264.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/org.objenesis:objenesis:jar:2.4</node>
-            <node x="1859.0" y="194.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.cedarsoftware:java-util:jar:1.9.0</node>
-            <node x="2031.0" y="159.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.cedarsoftware:java-util:jar:1.9.0/commons-logging:commons-logging:jar:1.1.1</node>
-            <node x="2064.5" y="229.1101419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.cedarsoftware:java-util:jar:1.9.0/com.cedarsoftware:json-io:jar:2.5.1</node>
-            <node x="754.5" y="681.1875">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9</node>
-            <node x="982.5" y="600.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/org.slf4j:slf4j-api:jar:1.6.1</node>
-            <node x="970.0" y="793.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/org.slf4j:slf4j-log4j12:jar:1.6.1</node>
-            <node x="994.0" y="653.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/jline:jline:jar:0.9.94</node>
-            <node x="991.5" y="723.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/io.netty:netty:jar:3.10.5.Final</node>
-            <node x="764.5" y="561.9851419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.101tec:zkclient:jar:0.10</node>
-            <node x="974.0" y="530.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.101tec:zkclient:jar:0.10/org.apache.zookeeper:zookeeper:jar:3.4.8</node>
-            <node x="731.0" y="914.0803470501276">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0</node>
-            <node x="967.0" y="914.0803470501276">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0</node>
-            <node x="1206.5" y="914.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0/org.apache.zookeeper:zookeeper:jar:3.4.9</node>
-            <node x="1220.5" y="844.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0/com.google.guava:guava:jar:16.0.1</node>
-            <node x="1215.0" y="984.7351419503491">com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0/org.slf4j:slf4j-api:jar:1.7.6</node>
-            <node x="248.5" y="574.4851419503491">com.alibaba:druid:jar:1.1.10</node>
-            <node x="201.5" y="1507.0283955045418">mysql:mysql-connector-java:jar:5.1.46</node>
-            <node x="241.5" y="1665.0283955045418">org.mybatis:mybatis:jar:3.4.6</node>
-            <node x="220.5" y="403.3601419503491">org.mybatis:mybatis-spring:jar:1.3.2</node>
-            <node x="243.0" y="1595.0283955045418">com.xcxcxcxcx:log-api:jar:1.0-SNAPSHOT</node>
-            <node x="491.0" y="1595.0283955045418">com.xcxcxcxcx:log-api:jar:1.0-SNAPSHOT/com.xcxcxcxcx:service-support:jar:1.0-SNAPSHOT</node>
-            <node x="227.0" y="1314.235141950349">org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE</node>
-            <node x="733.5" y="1344.4033955045418">org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.springframework:spring-messaging:jar:5.0.6.RELEASE</node>
-            <node x="971.0" y="1377.4033955045418">org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.springframework.retry:spring-retry:jar:1.2.2.RELEASE</node>
-            <node x="500.0" y="1224.9375">org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.apache.kafka:kafka-clients:jar:1.0.1</node>
-            <node x="764.0" y="1274.4033955045418">org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.apache.kafka:kafka-clients:jar:1.0.1/org.lz4:lz4-java:jar:1.4</node>
-            <node x="751.0" y="1204.4033955045418">org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.apache.kafka:kafka-clients:jar:1.0.1/org.xerial.snappy:snappy-java:jar:1.1.4</node>
-            <node x="499.0" y="1786.0283955045418">com.fasterxml.jackson.core:jackson-core:jar:2.9.6</node>
-            <node x="213.5" y="1735.0283955045418">com.fasterxml.jackson.core:jackson-databind:jar:2.9.6</node>
-            <node x="478.0" y="1727.5283955045418">com.fasterxml.jackson.core:jackson-databind:jar:2.9.6/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.springframework:spring-context-support:jar:5.0.7.RELEASE">
-              <point x="53.0" y="-5.294117647058783" />
-              <point x="-83.5" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-context:jar:5.0.7.RELEASE/org.springframework:spring-expression:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="68.5" y="-0.0" />
-              <point x="1170.0" y="1366.9439834137638" />
-              <point x="-50.0" y="-13.63636363636374" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-api:jar:1.0-SNAPSHOT" target="com.xcxcxcxcx:log-api:jar:1.0-SNAPSHOT/com.xcxcxcxcx:service-support:jar:1.0-SNAPSHOT">
-              <point x="37.0" y="-0.0" />
-              <point x="-61.5" y="-0.0" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE" target="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.springframework:spring-messaging:jar:5.0.6.RELEASE">
-              <point x="53.0" y="-0.0" />
-              <point x="374.0" y="1329.235141950349" />
-              <point x="454.0" y="1359.4033955045418" />
-              <point x="-68.5" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE">
-              <point x="53.0" y="-1.7647058823529278" />
-              <point x="186.0" y="1329.235141950349" />
-              <point x="-53.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.cedarsoftware:java-util:jar:1.9.0" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.cedarsoftware:java-util:jar:1.9.0/commons-logging:commons-logging:jar:1.1.1">
-              <point x="38.5" y="-7.5" />
-              <point x="1951.0" y="201.6101419503491" />
-              <point x="-69.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0">
-              <point x="98.5" y="11.25" />
-              <point x="-71.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/org.objenesis:objenesis:jar:2.4">
-              <point x="23.0" y="11.25" />
-              <point x="1764.0" y="166.25" />
-              <point x="-43.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.javakaffee:kryo-serializers:jar:0.42">
-              <point x="63.5" y="-1.875" />
-              <point x="-60.5" y="7.5" />
-            </edge>
-            <edge source="com.alibaba:dubbo:jar:2.6.4" target="org.springframework:spring-context:jar:5.0.7.RELEASE">
-              <point x="35.5" y="10.0" />
-              <point x="374.0" y="1034.2529890004766" />
-              <point x="454.0" y="1102.9375" />
-              <point x="-58.0" y="-11.25" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/commons-logging:commons-logging:jar:1.2">
-              <point x="63.5" y="5.625" />
-              <point x="-69.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.101tec:zkclient:jar:0.10" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.101tec:zkclient:jar:0.10/org.apache.zookeeper:zookeeper:jar:3.4.8">
-              <point x="37.5" y="-7.5" />
-              <point x="873.0" y="569.4851419503491" />
-              <point x="953.0" y="545.7351419503491" />
-              <point x="-47.5" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="com.alibaba:dubbo:jar:2.6.4">
-              <point x="53.0" y="-8.823529411764639" />
-              <point x="186.0" y="1024.2529890004766" />
-              <point x="-35.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.javakaffee:kryo-serializers:jar:0.42" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.javakaffee:kryo-serializers:jar:0.42/com.esotericsoftware:kryo:jar:4.0.0">
-              <point x="60.5" y="-0.0" />
-              <point x="-29.0" y="-0.0" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.springframework:spring-messaging:jar:5.0.6.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="68.5" y="7.5" />
-              <point x="1090.0" y="1366.9033955045418" />
-              <point x="1170.0" y="1380.5803470501276" />
-              <point x="-50.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0">
-              <point x="71.0" y="-0.0" />
-              <point x="-54.5" y="-0.0" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.springframework:spring-messaging:jar:5.0.6.RELEASE" target="org.springframework:spring-beans:jar:5.0.7.RELEASE">
-              <point x="68.5" y="-7.5" />
-              <point x="953.0" y="1211.3303470501276" />
-              <point x="-54.5" y="1.875" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/io.netty:netty:jar:3.10.5.Final">
-              <point x="47.5" y="6.0" />
-              <point x="873.0" y="702.1875" />
-              <point x="953.0" y="738.7351419503491" />
-              <point x="-30.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.cedarsoftware:java-util:jar:1.9.0">
-              <point x="23.0" y="3.75" />
-              <point x="1764.0" y="158.75" />
-              <point x="1844.0" y="209.1101419503491" />
-              <point x="-38.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4">
-              <point x="94.0" y="7.5" />
-              <point x="-98.5" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-context-support:jar:5.0.7.RELEASE" target="org.springframework:spring-context:jar:5.0.7.RELEASE">
-              <point x="83.5" y="-10.0" />
-              <point x="454.0" y="1117.9375" />
-              <point x="-58.0" y="3.75" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="com.xcxcxcxcx:log-api:jar:1.0-SNAPSHOT">
-              <point x="53.0" y="7.058823529411711" />
-              <point x="186.0" y="1610.0283955045418" />
-              <point x="-37.0" y="-0.0" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.apache.kafka:kafka-clients:jar:1.0.1" target="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.apache.kafka:kafka-clients:jar:1.0.1/org.lz4:lz4-java:jar:1.4">
-              <point x="52.5" y="7.5" />
-              <point x="651.0" y="1247.4375" />
-              <point x="731.0" y="1289.4033955045418" />
-              <point x="-38.0" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="mysql:mysql-connector-java:jar:5.1.46">
-              <point x="53.0" y="3.5294117647058556" />
-              <point x="186.0" y="1522.0283955045418" />
-              <point x="-78.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4">
-              <point x="98.5" y="3.75" />
-              <point x="731.0" y="834.2351419503491" />
-              <point x="1338.0" y="834.2351419503491" />
-              <point x="-63.5" y="11.25" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.springframework:spring-jdbc:jar:5.0.7.RELEASE">
-              <point x="53.0" y="5.294117647058783" />
-              <point x="186.0" y="1547.5283955045418" />
-              <point x="-49.5" y="7.5" />
-            </edge>
-            <edge source="org.springframework:spring-context:jar:5.0.7.RELEASE/org.springframework:spring-aop:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="48.5" y="-7.5" />
-              <point x="1090.0" y="1122.7783955045418" />
-              <point x="1170.0" y="1372.3985288683093" />
-              <point x="-50.0" y="-8.181818181818244" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4/com.alibaba:dubbo-serialization-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.alibaba:fastjson:jar:1.2.46">
-              <point x="84.0" y="-12.5" />
-              <point x="1418.0" y="7.5" />
-              <point x="-38.5" y="-7.5" />
-            </edge>
-            <edge source="org.springframework:spring-context-support:jar:5.0.7.RELEASE" target="org.springframework:spring-beans:jar:5.0.7.RELEASE">
-              <point x="83.5" y="10.0" />
-              <point x="454.0" y="1183.3408955045418" />
-              <point x="873.0" y="1183.3408955045418" />
-              <point x="953.0" y="1203.8303470501276" />
-              <point x="-54.5" y="-5.625" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4">
-              <point x="71.5" y="-7.5" />
-              <point x="651.0" y="308.6533955045418" />
-              <point x="731.0" y="299.6533955045418" />
-              <point x="-57.0" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-tx:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="42.0" y="7.5" />
-              <point x="1090.0" y="1437.7783955045418" />
-              <point x="1170.0" y="1386.034892504673" />
-              <point x="-50.0" y="5.454545454545496" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.mybatis:mybatis-spring:jar:1.3.2">
-              <point x="53.0" y="-14.117647058823422" />
-              <point x="186.0" y="418.3601419503491" />
-              <point x="-59.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo:jar:2.6.4" target="com.alibaba:dubbo:jar:2.6.4/org.javassist:javassist:jar:3.20.0-GA">
-              <point x="35.5" y="-0.0" />
-              <point x="374.0" y="1024.2529890004766" />
-              <point x="454.0" y="1053.7783955045418" />
-              <point x="-40.0" y="7.5" />
-            </edge>
-            <edge source="com.fasterxml.jackson.core:jackson-databind:jar:2.9.6" target="com.fasterxml.jackson.core:jackson-databind:jar:2.9.6/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0">
-              <point x="66.5" y="-7.5" />
-              <point x="-74.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9">
-              <point x="98.5" y="-3.75" />
-              <point x="731.0" y="696.1875" />
-              <point x="-47.5" y="-0.0" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE" target="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.apache.kafka:kafka-clients:jar:1.0.1">
-              <point x="53.0" y="-6.0" />
-              <point x="374.0" y="1323.235141950349" />
-              <point x="454.0" y="1239.9375" />
-              <point x="-52.5" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-context:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="58.0" y="-3.75" />
-              <point x="651.0" y="1110.4375" />
-              <point x="731.0" y="1104.7783955045418" />
-              <point x="1090.0" y="1104.7783955045418" />
-              <point x="1170.0" y="1369.6712561410366" />
-              <point x="-50.0" y="-10.909090909090992" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/log4j:log4j:jar:1.2.16">
-              <point x="63.5" y="9.375" />
-              <point x="1625.0" y="628.2351419503491" />
-              <point x="-30.5" y="-7.5" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0/org.slf4j:slf4j-api:jar:1.7.6">
-              <point x="54.5" y="10.0" />
-              <point x="1090.0" y="939.0803470501276" />
-              <point x="1170.0" y="999.7351419503491" />
-              <point x="-39.0" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.springframework:spring-beans:jar:5.0.7.RELEASE">
-              <point x="53.0" y="-3.5294117647058556" />
-              <point x="186.0" y="1193.9033955045418" />
-              <point x="873.0" y="1193.9033955045418" />
-              <point x="953.0" y="1207.5803470501276" />
-              <point x="-54.5" y="-1.875" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0/com.google.guava:guava:jar:16.0.1">
-              <point x="54.5" y="-10.0" />
-              <point x="1090.0" y="919.0803470501276" />
-              <point x="1170.0" y="859.7351419503491" />
-              <point x="-33.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4/com.alibaba:dubbo-serialization-api:jar:2.6.4">
-              <point x="59.0" y="-7.5" />
-              <point x="-84.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4" target="com.alibaba:dubbo:jar:2.6.4/org.javassist:javassist:jar:3.20.0-GA">
-              <point x="63.5" y="13.125" />
-              <point x="1625.0" y="1038.7783955045418" />
-              <point x="-40.0" y="-7.5" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/jline:jline:jar:0.9.94">
-              <point x="47.5" y="-0.0" />
-              <point x="873.0" y="696.1875" />
-              <point x="953.0" y="668.7351419503491" />
-              <point x="-27.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-container-api:jar:2.6.4">
-              <point x="71.5" y="7.5" />
-              <point x="651.0" y="323.6533955045418" />
-              <point x="731.0" y="513.6726419503491" />
-              <point x="-76.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4">
-              <point x="57.0" y="-0.0" />
-              <point x="-59.0" y="-0.0" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.springframework.retry:spring-retry:jar:1.2.2.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="50.5" y="-0.0" />
-              <point x="1090.0" y="1392.4033955045418" />
-              <point x="1170.0" y="1383.3076197774003" />
-              <point x="-50.0" y="2.727272727272748" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.alibaba:hessian-lite:jar:3.2.4">
-              <point x="63.5" y="-9.375" />
-              <point x="1625.0" y="92.5" />
-              <point x="-48.5" y="7.5" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="com.fasterxml.jackson.core:jackson-core:jar:2.9.6">
-              <point x="53.0" y="14.11764705882365" />
-              <point x="186.0" y="1808.5283955045418" />
-              <point x="-53.5" y="7.5" />
-            </edge>
-            <edge source="org.springframework:spring-context:jar:5.0.7.RELEASE" target="org.springframework:spring-context:jar:5.0.7.RELEASE/org.springframework:spring-aop:jar:5.0.7.RELEASE">
-              <point x="58.0" y="3.75" />
-              <point x="651.0" y="1117.9375" />
-              <point x="731.0" y="1130.2783955045418" />
-              <point x="-48.5" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="com.fasterxml.jackson.core:jackson-databind:jar:2.9.6">
-              <point x="53.0" y="10.588235294117567" />
-              <point x="186.0" y="1750.0283955045418" />
-              <point x="-66.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.fasterxml.jackson.core:jackson-core:jar:2.8.6">
-              <point x="23.0" y="-3.75" />
-              <point x="1764.0" y="151.25" />
-              <point x="-53.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4/com.alibaba:dubbo-serialization-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4">
-              <point x="84.0" y="12.5" />
-              <point x="-63.5" y="-11.25" />
-            </edge>
-            <edge source="org.springframework:spring-orm:jar:5.0.7.RELEASE" target="org.springframework:spring-beans:jar:5.0.7.RELEASE">
-              <point x="49.0" y="-11.25" />
-              <point x="374.0" y="1440.7783955045418" />
-              <point x="454.0" y="1403.4033955045418" />
-              <point x="873.0" y="1403.4033955045418" />
-              <point x="953.0" y="1215.0803470501276" />
-              <point x="-54.5" y="5.625" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.springframework:spring-orm:jar:5.0.7.RELEASE">
-              <point x="53.0" y="1.7647058823529278" />
-              <point x="186.0" y="1452.0283955045418" />
-              <point x="-49.0" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-orm:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="49.0" y="3.75" />
-              <point x="1090.0" y="1455.7783955045418" />
-              <point x="1170.0" y="1388.7621652319458" />
-              <point x="-50.0" y="8.181818181818244" />
-            </edge>
-            <edge source="org.springframework:spring-orm:jar:5.0.7.RELEASE" target="org.springframework:spring-tx:jar:5.0.7.RELEASE">
-              <point x="49.0" y="-3.75" />
-              <point x="374.0" y="1448.2783955045418" />
-              <point x="454.0" y="1441.1533955045418" />
-              <point x="651.0" y="1441.1533955045418" />
-              <point x="731.0" y="1434.0283955045418" />
-              <point x="-42.0" y="3.75" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.apache.kafka:kafka-clients:jar:1.0.1" target="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.apache.kafka:kafka-clients:jar:1.0.1/org.xerial.snappy:snappy-java:jar:1.1.4">
-              <point x="52.5" y="-7.5" />
-              <point x="651.0" y="1232.4375" />
-              <point x="731.0" y="1219.4033955045418" />
-              <point x="-51.0" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-core:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE/org.springframework:spring-jcl:jar:5.0.7.RELEASE">
-              <point x="50.0" y="-0.0" />
-              <point x="-43.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4">
-              <point x="94.0" y="-7.5" />
-              <point x="454.0" y="316.1533955045418" />
-              <point x="-71.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0/org.apache.zookeeper:zookeeper:jar:3.4.9">
-              <point x="54.5" y="-0.0" />
-              <point x="-47.5" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="com.alibaba:druid:jar:1.1.10">
-              <point x="53.0" y="-10.588235294117567" />
-              <point x="186.0" y="589.4851419503491" />
-              <point x="-31.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/com.esotericsoftware:minlog:jar:1.3.0">
-              <point x="29.0" y="-0.0" />
-              <point x="1764.0" y="479.59959349593487" />
-              <point x="1844.0" y="489.1101419503491" />
-              <point x="-36.0" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-beans:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="54.5" y="-0.0" />
-              <point x="1090.0" y="1209.4553470501276" />
-              <point x="1170.0" y="1377.8530743228548" />
-              <point x="-50.0" y="-2.727272727272748" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4/com.alibaba:dubbo-serialization-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1">
-              <point x="84.0" y="7.5" />
-              <point x="1418.0" y="465.9120934959348" />
-              <point x="1545.0" y="465.9120934959348" />
-              <point x="1625.0" y="472.09959349593487" />
-              <point x="-29.0" y="-7.5" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE" target="org.springframework:spring-tx:jar:5.0.7.RELEASE">
-              <point x="53.0" y="12.0" />
-              <point x="374.0" y="1341.235141950349" />
-              <point x="454.0" y="1416.0283955045418" />
-              <point x="651.0" y="1416.0283955045418" />
-              <point x="-42.0" y="-11.25" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE" target="org.springframework:spring-context:jar:5.0.7.RELEASE">
-              <point x="53.0" y="-12.0" />
-              <point x="374.0" y="1317.235141950349" />
-              <point x="454.0" y="1125.4375" />
-              <point x="-58.0" y="11.25" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="53.0" y="12.352941176470495" />
-              <point x="186.0" y="1775.5283955045418" />
-              <point x="1090.0" y="1775.5283955045418" />
-              <point x="1170.0" y="1394.2167106864913" />
-              <point x="-50.0" y="13.63636363636374" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/log4j:log4j:jar:1.2.16">
-              <point x="47.5" y="-6.0" />
-              <point x="873.0" y="690.1875" />
-              <point x="953.0" y="643.2351419503491" />
-              <point x="-30.5" y="7.5" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/org.objenesis:objenesis:jar:2.5.1">
-              <point x="29.0" y="-10.0" />
-              <point x="1764.0" y="469.59959349593487" />
-              <point x="-43.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4/com.alibaba:dubbo-serialization-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.javakaffee:kryo-serializers:jar:0.42">
-              <point x="84.0" y="2.5" />
-              <point x="1418.0" y="341.6101419503491" />
-              <point x="-60.5" y="-7.5" />
-            </edge>
-            <edge source="org.springframework:spring-jdbc:jar:5.0.7.RELEASE" target="org.springframework:spring-beans:jar:5.0.7.RELEASE">
-              <point x="49.5" y="-0.0" />
-              <point x="873.0" y="1540.0283955045418" />
-              <point x="953.0" y="1222.5803470501276" />
-              <point x="-54.5" y="13.125" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.alibaba:fastjson:jar:1.2.46">
-              <point x="63.5" y="-13.125" />
-              <point x="1625.0" y="22.5" />
-              <point x="-38.5" y="7.5" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6">
-              <point x="63.5" y="-5.625" />
-              <point x="1625.0" y="162.5" />
-              <point x="-23.0" y="7.5" />
-            </edge>
-            <edge source="org.springframework:spring-jdbc:jar:5.0.7.RELEASE" target="org.springframework:spring-tx:jar:5.0.7.RELEASE">
-              <point x="49.5" y="-10.0" />
-              <point x="651.0" y="1530.0283955045418" />
-              <point x="731.0" y="1441.5283955045418" />
-              <point x="-42.0" y="11.25" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.cedarsoftware:java-util:jar:1.9.0" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/com.cedarsoftware:java-util:jar:1.9.0/com.cedarsoftware:json-io:jar:2.5.1">
-              <point x="38.5" y="7.5" />
-              <point x="1951.0" y="216.6101419503491" />
-              <point x="2031.0" y="244.1101419503491" />
-              <point x="-36.0" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.springframework:spring-context:jar:5.0.7.RELEASE">
-              <point x="53.0" y="-7.058823529411711" />
-              <point x="186.0" y="1110.4375" />
-              <point x="-58.0" y="-3.75" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1">
-              <point x="63.5" y="1.875" />
-              <point x="1625.0" y="487.09959349593487" />
-              <point x="-29.0" y="7.5" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.mybatis:mybatis:jar:3.4.6">
-              <point x="53.0" y="8.823529411764639" />
-              <point x="186.0" y="1680.0283955045418" />
-              <point x="-38.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4/com.alibaba:dubbo-serialization-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6">
-              <point x="84.0" y="-2.5" />
-              <point x="1418.0" y="147.5" />
-              <point x="-23.0" y="-7.5" />
-            </edge>
-            <edge source="org.springframework:spring-jdbc:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="49.5" y="10.0" />
-              <point x="651.0" y="1550.0283955045418" />
-              <point x="731.0" y="1563.7053470501276" />
-              <point x="1090.0" y="1563.7053470501276" />
-              <point x="1170.0" y="1391.4894379592185" />
-              <point x="-50.0" y="10.909090909090992" />
-            </edge>
-            <edge source="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE" target="org.springframework.kafka:spring-kafka:jar:2.1.7.RELEASE/org.springframework.retry:spring-retry:jar:1.2.2.RELEASE">
-              <point x="53.0" y="6.0" />
-              <point x="374.0" y="1335.235141950349" />
-              <point x="454.0" y="1392.4033955045418" />
-              <point x="-50.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/de.ruedigermoeller:fst:jar:2.48-jdk-6/org.javassist:javassist:jar:3.19.0-GA">
-              <point x="23.0" y="-11.25" />
-              <point x="1764.0" y="143.75" />
-              <point x="1844.0" y="69.11014195034909" />
-              <point x="-40.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/com.esotericsoftware:reflectasm:jar:1.11.3">
-              <point x="29.0" y="10.0" />
-              <point x="1764.0" y="489.59959349593487" />
-              <point x="-46.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/com.esotericsoftware:reflectasm:jar:1.11.3" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.esotericsoftware:kryo:jar:4.0.1/com.esotericsoftware:reflectasm:jar:1.11.3/org.ow2.asm:asm:jar:5.0.4">
-              <point x="46.0" y="-0.0" />
-              <point x="-28.0" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-orm:jar:5.0.7.RELEASE" target="org.springframework:spring-jdbc:jar:5.0.7.RELEASE">
-              <point x="49.0" y="11.25" />
-              <point x="374.0" y="1463.2783955045418" />
-              <point x="454.0" y="1532.5283955045418" />
-              <point x="-49.5" y="-7.5" />
-            </edge>
-            <edge source="org.springframework:spring-context:jar:5.0.7.RELEASE" target="org.springframework:spring-context:jar:5.0.7.RELEASE/org.springframework:spring-expression:jar:5.0.7.RELEASE">
-              <point x="58.0" y="-11.25" />
-              <point x="651.0" y="1102.9375" />
-              <point x="731.0" y="1079.2783955045418" />
-              <point x="-68.5" y="-0.0" />
-            </edge>
-            <edge source="org.springframework:spring-context:jar:5.0.7.RELEASE" target="org.springframework:spring-beans:jar:5.0.7.RELEASE">
-              <point x="58.0" y="11.25" />
-              <point x="651.0" y="1125.4375" />
-              <point x="731.0" y="1155.7783955045418" />
-              <point x="873.0" y="1155.7783955045418" />
-              <point x="953.0" y="1200.0803470501276" />
-              <point x="-54.5" y="-9.375" />
-            </edge>
-            <edge source="org.springframework:spring-context-support:jar:5.0.7.RELEASE" target="org.springframework:spring-core:jar:5.0.7.RELEASE">
-              <point x="83.5" y="-0.0" />
-              <point x="1090.0" y="1168.4033955045418" />
-              <point x="1170.0" y="1375.125801595582" />
-              <point x="-50.0" y="-5.454545454545496" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.101tec:zkclient:jar:0.10">
-              <point x="98.5" y="-11.25" />
-              <point x="731.0" y="576.9851419503491" />
-              <point x="-37.5" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4/com.alibaba:dubbo-serialization-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4/com.alibaba:hessian-lite:jar:3.2.4">
-              <point x="84.0" y="-7.5" />
-              <point x="1418.0" y="77.5" />
-              <point x="-48.5" y="-7.5" />
-            </edge>
-            <edge source="com.alibaba:dubbo:jar:2.6.4" target="com.alibaba:dubbo:jar:2.6.4/org.jboss.netty:netty:jar:3.2.5.Final">
-              <point x="35.5" y="-10.0" />
-              <point x="374.0" y="1014.2529890004768" />
-              <point x="454.0" y="871.1101419503491" />
-              <point x="-30.0" y="-0.0" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/org.slf4j:slf4j-api:jar:1.6.1">
-              <point x="47.5" y="-12.0" />
-              <point x="873.0" y="684.1875" />
-              <point x="953.0" y="623.2351419503491" />
-              <point x="-39.0" y="7.5" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-container-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4">
-              <point x="76.5" y="-0.0" />
-              <point x="-63.5" y="3.75" />
-            </edge>
-            <edge source="org.springframework:spring-tx:jar:5.0.7.RELEASE" target="org.springframework:spring-beans:jar:5.0.7.RELEASE">
-              <point x="42.0" y="-7.5" />
-              <point x="873.0" y="1422.7783955045418" />
-              <point x="953.0" y="1218.8303470501276" />
-              <point x="-54.5" y="9.375" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.101tec:zkclient:jar:0.10" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/org.slf4j:slf4j-api:jar:1.6.1">
-              <point x="37.5" y="7.5" />
-              <point x="873.0" y="584.4851419503491" />
-              <point x="953.0" y="608.2351419503491" />
-              <point x="-39.0" y="-7.5" />
-            </edge>
-            <edge source="org.springframework:spring-context:jar:5.0.7.RELEASE/org.springframework:spring-aop:jar:5.0.7.RELEASE" target="org.springframework:spring-beans:jar:5.0.7.RELEASE">
-              <point x="48.5" y="7.5" />
-              <point x="873.0" y="1137.7783955045418" />
-              <point x="953.0" y="1196.3303470501276" />
-              <point x="-54.5" y="-13.125" />
-            </edge>
-            <edge source="com.fasterxml.jackson.core:jackson-databind:jar:2.9.6" target="com.fasterxml.jackson.core:jackson-core:jar:2.9.6">
-              <point x="66.5" y="7.5" />
-              <point x="374.0" y="1757.5283955045418" />
-              <point x="454.0" y="1793.5283955045418" />
-              <point x="-53.5" y="-7.5" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/org.slf4j:slf4j-log4j12:jar:1.6.1">
-              <point x="47.5" y="12.0" />
-              <point x="873.0" y="708.1875" />
-              <point x="953.0" y="808.7351419503491" />
-              <point x="-51.5" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4">
-              <point x="53.0" y="-12.352941176470495" />
-              <point x="-94.0" y="-0.0" />
-            </edge>
-            <edge source="com.xcxcxcxcx:log-provider:1.0-SNAPSHOT" target="org.springframework:spring-tx:jar:5.0.7.RELEASE">
-              <point x="53.0" y="-0.0" />
-              <point x="186.0" y="1426.5283955045418" />
-              <point x="-42.0" y="-3.75" />
-            </edge>
-            <edge source="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-registry-api:jar:2.6.4/com.alibaba:dubbo-cluster:jar:2.6.4/com.alibaba:dubbo-rpc-api:jar:2.6.4" target="com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/com.alibaba:dubbo-common:jar:2.6.4">
-              <point x="59.0" y="7.5" />
-              <point x="1170.0" y="488.1726419503491" />
-              <point x="1338.0" y="488.1726419503491" />
-              <point x="-63.5" y="-3.75" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.8242009132420091" x="973.0" y="910.0" />
-          <SelectedNodes>
-            <node>com.alibaba:dubbo-registry-zookeeper:jar:2.6.4/com.alibaba:dubbo-remoting-zookeeper:jar:2.6.4/org.apache.zookeeper:zookeeper:jar:3.4.9/io.netty:netty:jar:3.10.5.Final</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.1.7.RELEASE/spring-kafka-2.1.7.RELEASE.jar!/org/springframework/kafka/annotation/KafkaListenerAnnotationBeanPostProcessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="93" column="11" lean-forward="false" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.1.7.RELEASE/spring-kafka-2.1.7.RELEASE.jar!/org/springframework/kafka/annotation/KafkaBootstrapConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.1.7.RELEASE/spring-kafka-2.1.7.RELEASE.jar!/org/springframework/kafka/annotation/EnableKafka.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.1.7.RELEASE/spring-kafka-2.1.7.RELEASE.jar!/org/springframework/kafka/config/ConcurrentKafkaListenerContainerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.1.7.RELEASE/spring-kafka-2.1.7.RELEASE.jar!/org/springframework/kafka/core/DefaultKafkaConsumerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1265">
-          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/tool/jdk/src.zip!/java/net/Inet6AddressImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.1.7.RELEASE/spring-kafka-2.1.7.RELEASE.jar!/org/springframework/kafka/core/DefaultKafkaProducerFactory.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-167">
@@ -2227,20 +1689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/DatabindContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="311" column="0" lean-forward="false" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ser/impl/UnknownSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -2248,24 +1696,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/SerializerProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15065">
-          <caret line="700" column="47" lean-forward="false" selection-start-line="700" selection-start-column="47" selection-end-line="700" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/util/TypeKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ser/DefaultSerializerProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="479" column="0" lean-forward="false" selection-start-line="479" selection-start-column="0" selection-end-line="479" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2297,22 +1731,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/2.0.0/kafka-clients-2.0.0.jar!/org/apache/kafka/clients/producer/ProducerRecord.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="52" column="11" lean-forward="false" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/SenderTest.java" />
-    <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/ILogCollectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/tool/jdk/src.zip!/java/lang/Throwable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -2321,16 +1740,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/topic/KafkaTopicAutoConfiguration.java" />
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/config/KafkaConsumerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="63" column="48" lean-forward="false" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/tool/jdk/jre/lib/rt.jar!/sun/nio/ch/Net.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -2364,17 +1773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/producer/config/KafkaAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2386,50 +1784,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/dto.java" />
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/ILogSenderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogSenderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/entity/LogEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/LogMessageListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/dto/LogQuery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogCollectServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="150" column="32" lean-forward="false" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -2442,32 +1800,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log-provider/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="102" column="8" lean-forward="false" selection-start-line="102" selection-start-column="8" selection-end-line="106" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log-provider/src/main/resources/mapper/LogMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="56" lean-forward="false" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-          <folding>
-            <element signature="e#2080#2084#0" expanded="true" />
-            <element signature="e#2171#2175#0" expanded="true" />
-            <element signature="e#2500#2504#0" expanded="true" />
-            <marker date="1541658994679" expanded="true" signature="1762:1828" ph="SELECT * FRO... myshop_log" />
-            <marker date="1541658994679" expanded="true" signature="2447:2491" ph="DELETE FROM " />
-            <marker date="1541658994679" expanded="true" signature="2447:2521" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log-provider/src/main/resources/META-INF/spring/service-common.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="667">
           <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
           <folding />
         </state>
@@ -2475,35 +1810,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogCleanResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="414">
           <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="e#275#276#0" expanded="false" />
+            <element signature="e#304#305#0" expanded="false" />
+            <element signature="e#345#346#0" expanded="false" />
+            <element signature="e#381#382#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogDeliverResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="276">
           <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogEntityBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogQueryRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="27" column="24" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="27" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -2512,13 +1833,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#401#402#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#527#528#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log-provider/src/main/resources/META-INF/spring/service-provider.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
+        <state relative-caret-position="552">
           <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="41" />
           <folding />
         </state>
@@ -2527,7 +1854,264 @@
     <entry file="file://$PROJECT_DIR$/log-api/src/main/resources/client/log-reference.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/ILogCollectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ObjectMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="117" column="13" lean-forward="false" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogQueryRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/2.0.0/kafka-clients-2.0.0.jar!/org/apache/kafka/clients/producer/ProducerRecord.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.2.0.RELEASE/spring-kafka-2.2.0.RELEASE.jar!/org/springframework/kafka/support/serializer/JsonSerializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="87" column="124" lean-forward="false" selection-start-line="87" selection-start-column="124" selection-end-line="87" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.2.0.RELEASE/spring-kafka-2.2.0.RELEASE.jar!/org/springframework/kafka/support/serializer/JsonDeserializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.2.0.RELEASE/spring-kafka-2.2.0.RELEASE-sources.jar!/org/springframework/kafka/support/serializer/JsonDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="87" column="31" lean-forward="false" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="97" column="33" lean-forward="true" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/2.0.0/kafka-clients-2.0.0.jar!/org/apache/kafka/clients/producer/ProducerConfig.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="59" column="31" lean-forward="false" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.2.0.RELEASE/spring-kafka-2.2.0.RELEASE-sources.jar!/org/springframework/kafka/support/serializer/JsonSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="97" column="7" lean-forward="true" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/exc/InvalidDefinitionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/SerializerProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="1190" column="0" lean-forward="false" selection-start-line="1190" selection-start-column="0" selection-end-line="1190" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/DatabindContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="311" column="0" lean-forward="false" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ser/impl/UnknownSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ser/DefaultSerializerProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="332" column="24" lean-forward="true" selection-start-line="332" selection-start-column="24" selection-end-line="332" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ObjectWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="1390" column="29" lean-forward="false" selection-start-line="1390" selection-start-column="29" selection-end-line="1390" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/producer/config/KafkaAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="40" column="71" lean-forward="false" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-api/src/main/java/com/xcxcxcxcx/myshop/dto/LogEntityBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="83" column="9" lean-forward="false" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+          <folding>
+            <element signature="e#2309#2310#0" expanded="true" />
+            <element signature="e#2344#2345#0" expanded="true" />
+            <element signature="e#2386#2387#0" expanded="true" />
+            <element signature="e#2426#2427#0" expanded="true" />
+            <element signature="e#2460#2461#0" expanded="true" />
+            <element signature="e#2497#2498#0" expanded="true" />
+            <element signature="e#2542#2543#0" expanded="true" />
+            <element signature="e#2586#2587#0" expanded="true" />
+            <element signature="e#2621#2622#0" expanded="true" />
+            <element signature="e#2658#2659#0" expanded="true" />
+            <element signature="e#2704#2705#0" expanded="true" />
+            <element signature="e#2748#2749#0" expanded="true" />
+            <element signature="e#2783#2784#0" expanded="true" />
+            <element signature="e#2820#2821#0" expanded="true" />
+            <element signature="e#2866#2867#0" expanded="true" />
+            <element signature="e#2910#2911#0" expanded="true" />
+            <element signature="e#2948#2949#0" expanded="true" />
+            <element signature="e#2986#2987#0" expanded="true" />
+            <element signature="e#3036#3037#0" expanded="true" />
+            <element signature="e#3082#3083#0" expanded="true" />
+            <element signature="e#3120#3121#0" expanded="true" />
+            <element signature="e#3158#3159#0" expanded="true" />
+            <element signature="e#3208#3209#0" expanded="true" />
+            <element signature="e#3254#3255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/dal/entity/LogEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#828#829#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1024#1025#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1388#1389#0" expanded="true" />
+            <element signature="e#1422#1423#0" expanded="true" />
+            <element signature="e#1452#1453#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/ILogSenderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogCollectServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="126" column="38" lean-forward="true" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/src/main/resources/mapper/LogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="69" lean-forward="false" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
+          <folding>
+            <marker date="1542103972983" expanded="true" signature="1767:1833" ph="SELECT * FRO... myshop_log" />
+            <marker date="1542103972983" expanded="true" signature="2452:2496" ph="DELETE FROM " />
+            <marker date="1542103972983" expanded="true" signature="2452:2526" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/config/KafkaConsumerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="62" column="53" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/service/impl/LogSenderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding>
+            <marker date="1542102907727" expanded="false" signature="1287:1323" ph="&lt;~&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log-provider/src/main/java/com/xcxcxcxcx/myshop/log/kafka/consumer/LogMessageListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>

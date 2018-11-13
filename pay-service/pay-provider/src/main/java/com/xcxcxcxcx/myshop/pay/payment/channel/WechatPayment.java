@@ -139,7 +139,7 @@ public class WechatPayment extends BasePayment {
 
         PaymentRequest paymentRequest = (PaymentRequest) request;
 
-        if(response.getCode() == "SUCCESS"){
+        if("00000000".equals(response.getCode())){
             //持久化订单
             PayEntity payEntity = new PayEntity();
             payEntity.setPayId(context.getTradeNo());

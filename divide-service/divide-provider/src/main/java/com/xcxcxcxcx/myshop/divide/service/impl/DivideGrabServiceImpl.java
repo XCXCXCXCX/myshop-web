@@ -119,13 +119,13 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
 //                }
                 try {
                     //初始化前del
-                    redisTemplate.delete(topicId);
+                    redisTemplate.delete(topicId + "");
                     redisTemplate.delete(topicId + "_set");
 
                     double sumAmount = topic.getUnitAmount() * size;
                     for (int i = 0; i < size; i++) {
                         sumAmount = sumAmount - getCurrentRandomAmount(sumAmount, i, size - 1);
-                        redisTemplate.opsForList().leftPush(topicId, String.valueOf(sumAmount));
+                        redisTemplate.opsForList().leftPush(topicId + "", String.valueOf(sumAmount));
                         redisTemplate.opsForSet().add(topicId + "_set", legalBillList.get(i));
                     }
                 } catch (Exception e) {
@@ -161,7 +161,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
                                 , "topicId = " + topicId + "-> preFetch成功").build();
                 logSenderService.synDeliver(logger, logEntity);
 
-            }, topicPreFetchRequest.getDelayTime(), TimeUnit.SECONDS);
+            }, topicPreFetchRequest.getDelayTime(), TimeUnit.MILLISECONDS);
 
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());
             response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
@@ -315,7 +315,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
                 .collect(Collectors.toList());
 
         //从redis中读取数据
-        List<String> amountList = redisTemplate.opsForList().range(topicId, 0, -1);
+        List<String> amountList = redisTemplate.opsForList().range(topicId + "", 0, -1);
         Set<String> userSet = redisTemplate.opsForSet().members(topicId + "_set");
         int mysqlNeedToPayNum = mysqlNeedToPayBillList.size();
 
@@ -353,7 +353,7 @@ public class DivideGrabServiceImpl implements IDivideGrabService {
         if (current == currentSuccess) {
 
             //对账成功，令缓存失效
-            redisTemplate.delete(topicId);
+            redisTemplate.delete(topicId + "");
             redisTemplate.delete(topicId + "_set");
 
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());
